@@ -71,18 +71,24 @@ public class PlayerController : MonoBehaviour
 
     private void MoveUpdate()
     {
+        float inputX = 0.0f;
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            xSpeed = 6.0f; // X方向移動速度をプラスに
+            inputX = 1.0f;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            xSpeed = -6.0f; // X方向移動速度をマイナスに
+            inputX = -1.0f;
         }
-        else
+
+        // 反転状態なら入力方向を逆にする
+        if (isFlipped)
         {
-            xSpeed = 0.0f;
+            inputX *= -1.0f;
         }
+
+        xSpeed = inputX * 6.0f;
     }
 
     private void JumpUpdate()
@@ -121,18 +127,13 @@ public class PlayerController : MonoBehaviour
             localScale.y = -localScale.y; // Y軸反転（上下反転）
             transform.localScale = localScale;
 
-            // 位置を反転
+            //位置を反転
             Vector3 newPosition = transform.position;
             newPosition.y = -newPosition.y; // Y座標反転
             transform.position = newPosition;
 
             // 重力を反転
             rigidbody2D.gravityScale *= -1;
-
-            // groundCheckの位置も反転
-            Vector3 gcPos = groundCheck.localPosition;
-            gcPos.y *= -1;
-            groundCheck.localPosition = gcPos;
 
         }
     }
@@ -153,15 +154,11 @@ public class PlayerController : MonoBehaviour
             // 重力を元に戻す
             rigidbody2D.gravityScale *= -1;
 
-            // 位置を元に戻す
+            //位置を元に戻す
             Vector3 newPosition = transform.position;
             newPosition.y = -newPosition.y; // Y座標元に戻す
             transform.position = newPosition;
 
-            // groundCheck位置を元に戻す
-            Vector3 gcPos = groundCheck.localPosition;
-            gcPos.y *= -1;
-            groundCheck.localPosition = gcPos;
 
         }
     }

@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class houkou : MonoBehaviour
+public class houkou1 : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public float speed;
+    [SerializeField]
+    float speed;
     void Start()
     {
         
@@ -15,7 +16,7 @@ public class houkou : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(speed * Time.deltaTime, 0f, 0f);
         transform.Translate(0f, speed * Time.deltaTime, 0f);
+        transform.Translate(speed * Time.deltaTime, 0f, 0f);
     }
 }

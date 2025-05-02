@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class randamu : MonoBehaviour
+public class randamu1 : MonoBehaviour
 {
     public GameObject inseki;
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class randamu : MonoBehaviour
     }
     void Randamukougeki()
     {
-        Instantiate(inseki,new Vector2(Random.Range(-9.4f,13f),transform.position.y),
+        Instantiate(inseki,new Vector2(Random.Range(9.4f, -13f),transform.position.y),
             transform.rotation);
     }
 

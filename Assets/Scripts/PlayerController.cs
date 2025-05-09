@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
     private float xSpeed; // X•ûŒüˆÚ“®‘¬“x
     [SerializeField]
     private float jumpPower;
+    [SerializeField]
+    private GameObject _bullet;
+    [SerializeField]
+    private Transform firepoint;
+    private Vector2 shootDirection;
     private bool isGrounded;
     public Transform[] hanten;
     public Transform[] modoru;
@@ -105,6 +110,20 @@ public class PlayerController : MonoBehaviour
             //gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
 
+    }
+    public void OnAim(InputAction.CallbackContext ctx)
+    {
+        shootDirection = ctx.ReadValue<Vector2>();
+    }
+
+    public void OnShoot(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && shootDirection != Vector2.zero)
+        {
+            Debug.Log("Œ‚‚Á‚½");
+            GameObject bullet = Instantiate(_bullet, firepoint.position, Quaternion.identity);
+            bullet.GetComponent<BulletController>().SetDirection(shootDirection);
+        }
     }
 
     public void OnJump(InputAction.CallbackContext ctx)

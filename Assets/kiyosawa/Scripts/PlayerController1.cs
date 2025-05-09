@@ -7,7 +7,7 @@ public class PlayerController1 : MonoBehaviour
     public Rigidbody2D rb;
     public float jumpForce;
     bool isJumping;
-
+    public float HP;
     // ...
 
     private void Update()

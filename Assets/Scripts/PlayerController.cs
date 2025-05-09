@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d; // Rigidbody2Dコンポーネントへの参照
 
     [SerializeField]
+    private TextMeshProUGUI ammoText;
+    [SerializeField]
     private float xSpeed; // X方向移動速度
     [SerializeField]
     private float jumpPower;
@@ -22,6 +25,11 @@ public class PlayerController : MonoBehaviour
     private GameObject _bullet;
     [SerializeField]
     private Transform firepoint;
+    [SerializeField, Header("弾のクールタイム")]
+    private float ammoCt;
+    private int maxammo = 5; //最大弾数
+    private int ammo = 0;  //今の弾数
+    private float ctTime = 0f;
     private Vector2 shootDirection;
     private bool isGrounded;
     public Transform[] hanten;
@@ -95,8 +103,29 @@ public class PlayerController : MonoBehaviour
         //{
         //    xSpeed = -xSpeed;
         //}
+        AmmoCount();
+        AmmoUI();
     }
 
+
+    public void AmmoCount()
+    {
+        if (ammo < maxammo)
+        {
+            ctTime += Time.deltaTime;
+
+            if (ctTime >= ammoCt)
+            {
+                ammo++;
+                ctTime = 0f;
+            }
+        }
+    }
+
+    public void AmmoUI()
+    {
+        ammoText.text = $"AMMO:{ammo}";
+    }
     public void OnMove(InputAction.CallbackContext ctx)
     {
         if (ctx.started) return;
@@ -120,9 +149,13 @@ public class PlayerController : MonoBehaviour
     {
         if (ctx.performed && shootDirection != Vector2.zero)
         {
-            Debug.Log("撃った");
-            GameObject bullet = Instantiate(_bullet, firepoint.position, Quaternion.identity);
-            bullet.GetComponent<BulletController>().SetDirection(shootDirection);
+            if (ammo > 0)
+            {
+                GameObject bullet = Instantiate(_bullet, firepoint.position, Quaternion.identity);
+                bullet.GetComponent<BulletController>().SetDirection(shootDirection);
+                ammo--;
+            }
+
         }
     }
 

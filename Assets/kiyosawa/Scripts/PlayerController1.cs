@@ -25,5 +25,11 @@ public class PlayerController1 : MonoBehaviour
         {
             isJumping = false;
         }
+
+        if(collision.gameObject.CompareTag("inseki"))
+        {
+            HP--;
+        }
+
     }
 }

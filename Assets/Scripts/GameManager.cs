@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
         WinnerPanel.SetActive(false);
         WinP2.SetActive(false);
         WinP1.SetActive(false);
+
+        Time.timeScale = 1;
         
     }
 
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
             {
                 WinP2.SetActive(true);
             }
+            Time.timeScale = 0;
         }
     }
 }

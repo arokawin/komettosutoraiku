@@ -6,8 +6,8 @@ public class houkou1 : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField]
-    float speed;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _direction;
     void Start()
     {
         
@@ -16,7 +16,7 @@ public class houkou1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0f, speed * Time.deltaTime, 0f);
-        transform.Translate(speed * Time.deltaTime, 0f, 0f);
+        transform.Translate(0f, _speed * Time.deltaTime, 0f);
+        transform.Translate(_direction * Time.deltaTime, 0f, 0f);
     }
 }

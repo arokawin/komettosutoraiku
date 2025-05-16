@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/kiyosawa/Scenes/game main kari.unity
     guid: ae4cc5d438dbf5145b0256cd93d80c28
+  - enabled: 1
+    path: Assets/kiyosawa/Scenes/Title.unity
+    guid: 9b7bc68a5a84f5b4589669605fbd5aa3
   m_configObjects: {}

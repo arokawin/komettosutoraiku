@@ -4,20 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
-  - hanten
+  - ground
+  - inseki
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - groundLayer
+  - pleyer
   - Water
   - UI
-  - Ground
-  - Player1
-  - Bullet1
-  - Bullet2
-  - Player2
+  - pleyer1
+  - inseki
+  - ground
+  - 
+  - 
   - 
   - 
   - 

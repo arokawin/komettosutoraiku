@@ -6,6 +6,10 @@ TagManager:
   tags:
   - ground
   - inseki
+  - hanten
+  - Ground
+  - bullet1
+  - bullet2
   layers:
   - Default
   - TransparentFX
@@ -16,9 +20,9 @@ TagManager:
   - pleyer1
   - inseki
   - ground
-  - 
-  - 
-  - 
+  - Player2
+  - bullet1
+  - bullet2
   - 
   - 
   - 

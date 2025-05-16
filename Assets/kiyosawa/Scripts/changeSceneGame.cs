@@ -5,8 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class changeSceneGame : MonoBehaviour
 {
-    public void change_button()
+    public void Restart_button()
     {
-        SceneManager.LoadScene("game main kari");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void changeTitle_button()
+    {
+        SceneManager.LoadScene("Title");
+    }
+    public void changeGame_button()
+    {
+        SceneManager.LoadScene("GameMain");
     }
 }

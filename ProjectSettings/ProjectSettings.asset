@@ -909,11 +909,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: bd8d43ac-3443-4a2c-8c75-d202e43176ed
+  cloudProjectId: 0b6f5d46-a32d-42d1-ad77-c96c39e9f757
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: kometto
-  organizationId: metaru115
+  projectName: My project
+  organizationId: kiyo0015
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

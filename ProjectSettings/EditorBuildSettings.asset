@@ -12,4 +12,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Move Test.unity
     guid: 69bf567ee18030f48b8c9ec39a98d814
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: d7a8a5b0834d53e429f7fd4724436591, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d41a0b63fffd52e4999f9f4265819097, type: 3}

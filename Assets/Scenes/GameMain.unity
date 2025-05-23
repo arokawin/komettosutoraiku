@@ -760,6 +760,22 @@ PrefabInstance:
       propertyPath: GroundLayer.m_Bits
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 5011296190169839317, guid: 98a8b14e1017e72488d1eb28dfbf7714, type: 3}
+      propertyPath: hanten.Array.data[0]
+      value: 
+      objectReference: {fileID: 867147963}
+    - target: {fileID: 5011296190169839317, guid: 98a8b14e1017e72488d1eb28dfbf7714, type: 3}
+      propertyPath: hanten.Array.data[1]
+      value: 
+      objectReference: {fileID: 1181151580}
+    - target: {fileID: 5011296190169839317, guid: 98a8b14e1017e72488d1eb28dfbf7714, type: 3}
+      propertyPath: modoru.Array.data[0]
+      value: 
+      objectReference: {fileID: 1099585673}
+    - target: {fileID: 5011296190169839317, guid: 98a8b14e1017e72488d1eb28dfbf7714, type: 3}
+      propertyPath: modoru.Array.data[1]
+      value: 
+      objectReference: {fileID: 1792386623}
     - target: {fileID: 5721557673575199724, guid: 98a8b14e1017e72488d1eb28dfbf7714, type: 3}
       propertyPath: m_DefaultActionMap
       value: Player
@@ -1218,6 +1234,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &867147963 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3513674721796720045, guid: 196764b63d0742e42bd4692d1dbec3a2, type: 3}
+  m_PrefabInstance: {fileID: 502195529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &898282807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,6 +1597,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1099585673 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 221918464173923054, guid: 196764b63d0742e42bd4692d1dbec3a2, type: 3}
+  m_PrefabInstance: {fileID: 502195529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1147210281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,6 +1686,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1181151580 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4859337976470370640, guid: 196764b63d0742e42bd4692d1dbec3a2, type: 3}
+  m_PrefabInstance: {fileID: 502195529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1210155033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,6 +2496,11 @@ Transform:
   - {fileID: 1533075801}
   m_Father: {fileID: 208317768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1792386623 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2194916579876776552, guid: 196764b63d0742e42bd4692d1dbec3a2, type: 3}
+  m_PrefabInstance: {fileID: 502195529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1813367714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2709,22 @@ PrefabInstance:
       propertyPath: GroundLayer.m_Bits
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 5011296190169839317, guid: 98a8b14e1017e72488d1eb28dfbf7714, type: 3}
+      propertyPath: hanten.Array.data[0]
+      value: 
+      objectReference: {fileID: 867147963}
+    - target: {fileID: 5011296190169839317, guid: 98a8b14e1017e72488d1eb28dfbf7714, type: 3}
+      propertyPath: hanten.Array.data[1]
+      value: 
+      objectReference: {fileID: 1181151580}
+    - target: {fileID: 5011296190169839317, guid: 98a8b14e1017e72488d1eb28dfbf7714, type: 3}
+      propertyPath: modoru.Array.data[0]
+      value: 
+      objectReference: {fileID: 1099585673}
+    - target: {fileID: 5011296190169839317, guid: 98a8b14e1017e72488d1eb28dfbf7714, type: 3}
+      propertyPath: modoru.Array.data[1]
+      value: 
+      objectReference: {fileID: 1792386623}
     - target: {fileID: 5752542897823028664, guid: 98a8b14e1017e72488d1eb28dfbf7714, type: 3}
       propertyPath: m_Layer
       value: 9

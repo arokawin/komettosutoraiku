@@ -8,13 +8,11 @@ public class FlipWall : MonoBehaviour
     private float coolTime;
     private float time;
     private bool flipCheck;
-    // Start is called before the first frame update
     void Start()
     {
         time = 0f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
@@ -29,18 +27,6 @@ public class FlipWall : MonoBehaviour
             var player = collision.gameObject.GetComponent<PlayerController>();
             if (!flipCheck) return;
             Flip(collision.transform, rb2d, player);
-            /*if (!player.isFlipped)
-            {
-                player.isFlipped = true;
-                Flip(other.transform,rb2d,player);
-                //StartCoroutine(FlipCoolTime());
-            }
-            else
-            {
-                player.isFlipped = false;
-                Flip(other.transform, rb2d,player);
-                //StartCoroutine(FlipCoolTime());
-            }*/
         }
     }
 
@@ -68,9 +54,5 @@ public class FlipWall : MonoBehaviour
         time = 0f;
     }
 
-    /*private IEnumerator FlipCoolTime()
-    {
-        yield return new WaitForSeconds(time);
-    }*/
 }
 

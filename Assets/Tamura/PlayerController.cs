@@ -66,6 +66,11 @@ public class PlayerController : MonoBehaviour
         input?.Enable();
     }
 
+    private void OnDestroy()
+    {
+        input?.Disable();
+    }
+
     // Update is called once per frame
     void Update()
     {

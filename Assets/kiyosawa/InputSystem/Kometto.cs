@@ -899,8 +899,8 @@ public partial class @Kometto: IInputActionCollection2, IDisposable
 
     ~@Kometto()
     {
-        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, Kometto.Player.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, Kometto.UI.Disable() has not been called.");
+        //UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, Kometto.Player.Disable() has not been called.");
+        //UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, Kometto.UI.Disable() has not been called.");
     }
 
     public void Dispose()

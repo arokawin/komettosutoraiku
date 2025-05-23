@@ -21,7 +21,7 @@ public class FlipWall : MonoBehaviour
         if (time > coolTime) flipCheck = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {  
@@ -54,7 +54,7 @@ public class FlipWall : MonoBehaviour
 
         //à íuÇîΩì]
         Vector3 newPosition = transform.position;
-        newPosition.x = -newPosition.x;
+        newPosition.x = -newPosition.x - 0.2f; 
         newPosition.y = -newPosition.y; // Yç¿ïWîΩì]
         transform.position = newPosition;
 

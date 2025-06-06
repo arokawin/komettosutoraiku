@@ -27,8 +27,9 @@ public class FlipWall : MonoBehaviour
         {  
             var rb2d = collision.gameObject.GetComponent<Rigidbody2D>();
             var player = collision.gameObject.GetComponent<PlayerController>();
+            var flipX = collision.gameObject.GetComponent<SpriteRenderer>();
             if (!flipCheck) return;
-            Flip(collision.transform, rb2d, player);
+            Flip(collision.transform, rb2d, player,flipX);
             /*if (!player.isFlipped)
             {
                 player.isFlipped = true;
@@ -44,13 +45,14 @@ public class FlipWall : MonoBehaviour
         }
     }
 
-    private void Flip(Transform transform,Rigidbody2D rb2d,PlayerController PlayerCTL)
+    private void Flip(Transform transform,Rigidbody2D rb2d,PlayerController PlayerCTL,SpriteRenderer sprite)
     {
         // X����Y���̗����𔽓]
         Vector3 localScale = transform.localScale;
         localScale.x = -localScale.x; // X�����]
         localScale.y = -localScale.y; // Y�����]�i�㉺���]�j
         transform.localScale = localScale;
+        sprite.flipX = !sprite.flipX;
 
         //�ʒu�𔽓]
         Vector3 newPosition = transform.position;

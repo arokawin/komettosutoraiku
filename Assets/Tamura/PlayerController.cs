@@ -4,12 +4,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     #region　へんすう
 
-    
+    [SerializeField]
+    private GameManager gameManager;
     public Transform groundCheck; // 足元に設置するEmptyオブジェクト
     public float groundCheckRadius = 0.2f;
     public LayerMask GroundLayer;
@@ -53,8 +55,8 @@ public class PlayerController : MonoBehaviour
     private int HantenIndex = 0; // 現在の反転地点インデックス
     private int ModoruIndex = 0; // 現在の戻る地点インデックス
 
-    private float _width = Screen.width / 100f;
-    private float _margin = 1f;
+    
+
     #endregion
     // Start is called before the first frame update
 
@@ -66,6 +68,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         input = new Kometto();
         input?.Enable();
+
     }
 
     private void OnDestroy()
@@ -76,8 +79,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.localPosition.x > _width + _margin) transform.localPosition -= new Vector3(19.2f * 2f, 0, 0);
-        if (transform.localPosition.x < -_width - _margin) transform.localPosition += new Vector3(19.2f * 2f, 0, 0);
+        if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
         //MoveUpdate();
         //JumpUpdate();
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, GroundLayer);
@@ -108,6 +110,15 @@ public class PlayerController : MonoBehaviour
         }*/
 
       transform.position += new Vector3(move.x, 0f, 0f) * xSpeed * Time.deltaTime;
+
+        if (move.x < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (move.x > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
         //else transform.position += new Vector3(move.x, 0f, 0f) * xSpeed * Time.deltaTime;
 
         //if (isFlipped)
@@ -136,6 +147,7 @@ public class PlayerController : MonoBehaviour
     public void AmmoUI()
     {
         ammoText.text = $"AMMO:{ammo}";
+        //gageImg.fillAmount = ammo / maxammo;
     }
     public void OnMove(InputAction.CallbackContext ctx)
     {

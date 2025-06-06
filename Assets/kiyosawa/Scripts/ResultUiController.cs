@@ -11,6 +11,9 @@ public class ResultUiController : MonoBehaviour
     private Button[] _buttons;
     private int _nowSelectButtonNum = 0;
 
+    /// <summary>
+    /// UI が有効化されたら０番目のボタンが選択される
+    /// </summary>
     private void OnEnable()
     {
         _buttons[_nowSelectButtonNum].Select();

@@ -184,8 +184,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef488d103f210df4a839f01fe95e6218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inseki: {fileID: 1015745274659383144, guid: 512ebd7975c53fd48815a4a0f50a3e56, type: 3}
-  _inseki: {fileID: 6858908498451618362, guid: fb6f82c290b345c498f42cdd75603e00, type: 3}
+  inseki1: {fileID: 1015745274659383144, guid: 512ebd7975c53fd48815a4a0f50a3e56, type: 3}
+  inseki2: {fileID: 6858908498451618362, guid: fb6f82c290b345c498f42cdd75603e00, type: 3}
+  inseki3: {fileID: 3727473151660320644, guid: 979606ec4c001e54982c04921ca42488, type: 3}
+  inseki4: {fileID: 3283787312342650929, guid: 038dccec13ba3b748af76d53e55b698d, type: 3}
 --- !u!4 &279491987
 Transform:
   m_ObjectHideFlags: 0
@@ -195,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 279491985}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.5, z: 0}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -836,52 +838,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1753641372}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &590446960
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 590446962}
-  - component: {fileID: 590446963}
-  m_Layer: 0
-  m_Name: kougeki (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &590446962
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590446960}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 639039456}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &590446963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590446960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d536f36d3d561744b9e628096fa6a59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inseki: {fileID: 3727473151660320644, guid: 979606ec4c001e54982c04921ca42488, type: 3}
-  _inseki: {fileID: 3283787312342650929, guid: 038dccec13ba3b748af76d53e55b698d, type: 3}
 --- !u!1 &639039455
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &639039456
 Transform:
   m_ObjectHideFlags: 0
@@ -912,7 +868,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 279491987}
-  - {fileID: 590446962}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &649453596
@@ -3121,7 +3076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8258322056307210862, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3282,6 +3237,14 @@ PrefabInstance:
     - target: {fileID: 8221993582675761956, guid: 0597f456019c76a46bf1674d1242f891, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460053575707681591, guid: 0597f456019c76a46bf1674d1242f891, type: 3}
+      propertyPath: bgmDateList.Array.data[1].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460053575707681591, guid: 0597f456019c76a46bf1674d1242f891, type: 3}
+      propertyPath: bgmDateList.Array.data[2].Type
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8460053575707681591, guid: 0597f456019c76a46bf1674d1242f891, type: 3}
       propertyPath: bgmDateList.Array.data[0].Volume

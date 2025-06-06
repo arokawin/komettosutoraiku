@@ -8,6 +8,7 @@ public class ChangeSceneGame : MonoBehaviour
     // GetComponent での参照する時
     // 上で GetComponent で参照したいスクリプト名を参照
     //private SoundManager soundManager;
+
     public void Restart_button()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

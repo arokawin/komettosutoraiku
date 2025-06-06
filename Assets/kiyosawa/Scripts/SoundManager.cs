@@ -84,7 +84,7 @@ public class SoundManager : MonoBehaviour
             bgmSource.loop = bgm.Loop;
             bgmSource.Play();
         }
-        public void StpoBgm()
+        public void StopBgm()
         {
             bgmSource.Stop();
         }

@@ -11,13 +11,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject WinnerPanel;
     [SerializeField] private GameObject WinP1;
     [SerializeField] private GameObject WinP2;
-    public bool gameEnd = true;
+    public bool gameEnd;
 
     // Start is called before the first frame update
     void Start()
     {
         //  =! ‚Í‹t‚ÌˆÓ–¡
-        gameEnd =! gameEnd;
+        gameEnd = true;
         SoundManager.Instance.PlayBgm(BGMType.BGM1);
 
         WinnerPanel.SetActive(false);
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     {
        if(Player1.GetComponent<PlayerController>().HP <= 0 || Player2.GetComponent<PlayerController>().HP <= 0)
         {
-            gameEnd  =! gameEnd;
+            gameEnd  = false;
             
             //@Instance ‚Å‚ÌŽQÆ
             SoundManager.Instance.PlayBgm(BGMType.BGM2);

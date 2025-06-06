@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,21 +10,39 @@ public class ChangeSceneGame : MonoBehaviour
     // 上で GetComponent で参照したいスクリプト名を参照
     //private SoundManager soundManager;
 
-    public void Restart_button()
+    public async void Restart_button()
     {
+        SoundManager.Instance.PlaySe(SEType.SE1);
+        // 500ミリ秒待ってから処理を続ける
+        Debug.Log("se");
+        await Task.Delay(500);
+        Debug.Log("seni");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        await Task.Yield();
     }
-    public void changeTitle_button()
+    public async void changeTitle_button()
     {
+        SoundManager.Instance.PlaySe(SEType.SE1);
+        // 500ミリ秒待ってから処理を続ける
+        await Task.Delay(500);
         SceneManager.LoadScene("Title");
+        await Task.Yield();
     }
-    public void changeGame_button(bool deleteOldScene = false)
+    public async void changeGame_button(bool deleteOldScene = false)
     {
+        SoundManager.Instance.PlaySe(SEType.SE1);
+        // 500ミリ秒待ってから処理を続ける
+        await Task.Delay(500);
         SceneManager.LoadScene("GameMain");
+        await Task.Yield();
     }
 
-    public void ReloadScene()
+    public async void ReloadScene()
     {
+        SoundManager.Instance.PlaySe(SEType.SE1);
+        // 500ミリ秒待ってから処理を続ける
+        await Task.Delay(500);
         changeGame_button(true);
+        await Task.Yield();
     }
 }

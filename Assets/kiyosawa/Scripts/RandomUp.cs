@@ -12,9 +12,13 @@ public class RandomUp : MonoBehaviour
     void Start()
     {
         // ŒJ‚è•Ô‚µˆ—
+        SoundManager.Instance.PlaySe(SEType.SE2);
         InvokeRepeating("Randomkougeki_UpRight", 2f, 4f);
+        SoundManager.Instance.PlaySe(SEType.SE2);
         InvokeRepeating("Randomkougeki_UpLeft", 3f, 3f);
+        SoundManager.Instance.PlaySe(SEType.SE2);
         InvokeRepeating("Randomkougeki_UnderLeft", 2f, 4f);
+        SoundManager.Instance.PlaySe(SEType.SE2);
         InvokeRepeating("Randomkougeki_UnderRight", 3f, 3f);
     }
 

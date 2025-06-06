@@ -15,7 +15,6 @@ public class ChangeSceneGame : MonoBehaviour
     }
     public void changeGame_button(bool deleteOldScene = false)
     {
-
         SceneManager.LoadScene("GameMain");
     }
 

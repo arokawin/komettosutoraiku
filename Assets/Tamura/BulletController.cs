@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    [SerializeField,Header("’e‚Ì‘¬“x")]
+    [SerializeField,Header("ï¿½eï¿½Ì‘ï¿½ï¿½x")]
     private float speed;
     private Vector2 direction = Vector2.right;
 
-    // ’e‚ÌŒü‚«‚ğŠO•”‚©‚çİ’è
+    // ï¿½eï¿½ÌŒï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ’ï¿½
     public void SetDirection(Vector2 dir)
     {
         direction = dir.normalized;
@@ -21,6 +21,6 @@ public class BulletController : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject); // ‰æ–ÊŠO‚Éo‚½‚ç”jŠü
+        Destroy(gameObject); // ï¿½ï¿½ÊŠOï¿½Éoï¿½ï¿½ï¿½ï¿½jï¿½ï¿½
     }
 }

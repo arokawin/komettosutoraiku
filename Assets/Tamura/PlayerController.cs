@@ -7,28 +7,28 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    #region@‚Ö‚ñ‚·‚¤
+    #regionã€€ã¸ã‚“ã™ã†
 
     
-    public Transform groundCheck; // ‘«Œ³‚ÉÝ’u‚·‚éEmptyƒIƒuƒWƒFƒNƒg
+    public Transform groundCheck; // è¶³å…ƒã«è¨­ç½®ã™ã‚‹Emptyã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     public float groundCheckRadius = 0.2f;
     public LayerMask GroundLayer;
-    private Rigidbody2D rb2d; // Rigidbody2DƒRƒ“ƒ|[ƒlƒ“ƒg‚Ö‚ÌŽQÆ
+    private Rigidbody2D rb2d; // Rigidbody2Dã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã¸ã®å‚ç…§
 
     [SerializeField]
     private TextMeshProUGUI ammoText;
     [SerializeField]
-    private float xSpeed; // X•ûŒüˆÚ“®‘¬“x
+    private float xSpeed; // Xæ–¹å‘ç§»å‹•é€Ÿåº¦
     [SerializeField]
     private float jumpPower;
     [SerializeField]
     private GameObject _bullet;
     [SerializeField]
     private Transform firepoint;
-    [SerializeField, Header("’e‚ÌƒN[ƒ‹ƒ^ƒCƒ€")]
+    [SerializeField, Header("å¼¾ã®ã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ ")]
     private float ammoCt;
-    private int maxammo = 5; //Å‘å’e”
-    private int ammo = 0;  //¡‚Ì’e”
+    private int maxammo = 5; //æœ€å¤§å¼¾æ•°
+    private int ammo = 0;  //ä»Šã®å¼¾æ•°
     private float ctTime = 0f;
     private Vector2 shootDirection;
     private bool isGrounded;
@@ -37,22 +37,24 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     private bool jump;
 
-    public float flipTriggerDistance = 0.2f; //‹ß‚Ã‚¢‚½‚ç”½‰ž
+    public float flipTriggerDistance = 0.2f; //è¿‘ã¥ã„ãŸã‚‰åå¿œ
 
-    public bool isFlipped = false; // ”½“]ó‘Ô‚ðŠÇ—
+    public bool isFlipped = false; // åè»¢çŠ¶æ…‹ã‚’ç®¡ç†
 
     private SpriteRenderer spriteRenderer;
     private Kometto input;
 
-    //public Sprite normalSprite;   // ’Êí‚ÌŒ©‚½–Ú
-    //public Sprite flippedSprite;  // ”½“]Žž‚ÌŒ©‚½–Ú
+    //public Sprite normalSprite;   // é€šå¸¸ã®è¦‹ãŸç›®
+    //public Sprite flippedSprite;  // åè»¢æ™‚ã®è¦‹ãŸç›®
 
-    private float flipCooldown = 0.5f; // ”½“]‚µ‚Ä‚©‚çÄ”½“]‚Ü‚Å‚ÌŽžŠÔ
+    private float flipCooldown = 0.5f; // åè»¢ã—ã¦ã‹ã‚‰å†åè»¢ã¾ã§ã®æ™‚é–“
     private float lastFlipTime = -999f;
 
-    private int HantenIndex = 0; // Œ»Ý‚Ì”½“]’n“_ƒCƒ“ƒfƒbƒNƒX
-    private int ModoruIndex = 0; // Œ»Ý‚Ì–ß‚é’n“_ƒCƒ“ƒfƒbƒNƒX
+    private int HantenIndex = 0; // ç¾åœ¨ã®åè»¢åœ°ç‚¹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
+    private int ModoruIndex = 0; // ç¾åœ¨ã®æˆ»ã‚‹åœ°ç‚¹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 
+    private float _width = Screen.width / 100f;
+    private float _margin = 1f;
     #endregion
     // Start is called before the first frame update
 
@@ -74,14 +76,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.localPosition.x > _width + _margin) transform.localPosition -= new Vector3(19.2f * 2f, 0, 0);
+        if (transform.localPosition.x < -_width - _margin) transform.localPosition += new Vector3(19.2f * 2f, 0, 0);
         //MoveUpdate();
         //JumpUpdate();
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, GroundLayer);
         /*if (Time.time - lastFlipTime < flipCooldown)
             return;*/
-        // Flip‚Ì”»’è
+        // Flipã®åˆ¤å®š
 
-        // ”½“]ƒ|ƒCƒ“ƒg‚É‹ß‚¢‚©ƒ`ƒFƒbƒN
+        // åè»¢ãƒã‚¤ãƒ³ãƒˆã«è¿‘ã„ã‹ãƒã‚§ãƒƒã‚¯
         /*foreach (Transform point in hanten)
         {
             if (!isFlipped && Vector2.Distance(transform.position, point.position) < flipTriggerDistance)
@@ -92,7 +96,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // –ß‚èƒ|ƒCƒ“ƒg‚É‹ß‚¢‚©ƒ`ƒFƒbƒN
+        // æˆ»ã‚Šãƒã‚¤ãƒ³ãƒˆã«è¿‘ã„ã‹ãƒã‚§ãƒƒã‚¯
         foreach (Transform point in modoru)
         {
             if (isFlipped && Vector2.Distance(transform.position, point.position) < flipTriggerDistance)
@@ -173,7 +177,7 @@ public class PlayerController : MonoBehaviour
             if (isGrounded && ctx.ReadValueAsButton())
             {
 
-                rb2d.velocity = new Vector2(rb2d.velocity.x, isFlipped ? -jumpPower : jumpPower); //¡‚Ìd—Í•ûŒü‚ÉƒWƒƒƒ“ƒv
+                rb2d.velocity = new Vector2(rb2d.velocity.x, isFlipped ? -jumpPower : jumpPower); //ä»Šã®é‡åŠ›æ–¹å‘ã«ã‚¸ãƒ£ãƒ³ãƒ—
             }
         }
     }
@@ -187,7 +191,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    #region ‚¢‚ñ‚Õ‚Á‚Æ‚Ü‚Ë[‚¶‚á[
+    #region ã„ã‚“ã·ã£ã¨ã¾ã­ãƒ¼ã˜ã‚ƒãƒ¼
 
 
     public void MoveUpdate()
@@ -203,7 +207,7 @@ public class PlayerController : MonoBehaviour
             inputX = -1.0f;
         }
 
-        // ”½“]ó‘Ô‚È‚ç“ü—Í•ûŒü‚ð‹t‚É‚·‚é
+        // åè»¢çŠ¶æ…‹ãªã‚‰å…¥åŠ›æ–¹å‘ã‚’é€†ã«ã™ã‚‹
         if (isFlipped)
         {
             inputX *= -1.0f;
@@ -219,7 +223,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             float jumpPower = 5.0f;
-            rb2d.velocity = new Vector2(rb2d.velocity.x, isFlipped ? -jumpPower : jumpPower); //¡‚Ìd—Í•ûŒü‚ÉƒWƒƒƒ“ƒv
+            rb2d.velocity = new Vector2(rb2d.velocity.x, isFlipped ? -jumpPower : jumpPower); //ä»Šã®é‡åŠ›æ–¹å‘ã«ã‚¸ãƒ£ãƒ³ãƒ—
         }
     }
 
@@ -227,34 +231,34 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // ˆÚ“®‘¬“xƒxƒNƒgƒ‹‚ðŒ»Ý’l‚©‚çŽæ“¾
+        // ç§»å‹•é€Ÿåº¦ãƒ™ã‚¯ãƒˆãƒ«ã‚’ç¾åœ¨å€¤ã‹ã‚‰å–å¾—
         Vector2 velocity = rb2d.velocity;
-        // X•ûŒü‚Ì‘¬“x‚ð“ü—Í‚©‚çŒˆ’è
+        // Xæ–¹å‘ã®é€Ÿåº¦ã‚’å…¥åŠ›ã‹ã‚‰æ±ºå®š
         velocity.x = xSpeed;
 
-        // ŒvŽZ‚µ‚½ˆÚ“®‘¬“xƒxƒNƒgƒ‹‚ðRigidbody2D‚É”½‰f
+        // è¨ˆç®—ã—ãŸç§»å‹•é€Ÿåº¦ãƒ™ã‚¯ãƒˆãƒ«ã‚’Rigidbody2Dã«åæ˜ 
         //rb2d.velocity = velocity;
     }
 
     /*private void Flip()
     {
-        // ƒLƒƒƒ‰ƒNƒ^[‚ð”½“]
+        // ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã‚’åè»¢
         if (isFlipped) return;
         {
             isFlipped = true;
 
-            // XŽ²‚ÆYŽ²‚Ì—¼•û‚ð”½“]
+            // Xè»¸ã¨Yè»¸ã®ä¸¡æ–¹ã‚’åè»¢
             Vector3 localScale = transform.localScale;
-            localScale.x = -localScale.x; // XŽ²”½“]
-            localScale.y = -localScale.y; // YŽ²”½“]iã‰º”½“]j
+            localScale.x = -localScale.x; // Xè»¸åè»¢
+            localScale.y = -localScale.y; // Yè»¸åè»¢ï¼ˆä¸Šä¸‹åè»¢ï¼‰
             transform.localScale = localScale;
 
-            //ˆÊ’u‚ð”½“]
+            //ä½ç½®ã‚’åè»¢
             Vector3 newPosition = transform.position;
-            newPosition.y = -newPosition.y; // YÀ•W”½“]
+            newPosition.y = -newPosition.y; // Yåº§æ¨™åè»¢
             transform.position = newPosition;
 
-            // d—Í‚ð”½“]
+            // é‡åŠ›ã‚’åè»¢
             rb2d.gravityScale *= -1;
 
         }
@@ -262,23 +266,23 @@ public class PlayerController : MonoBehaviour
 
     private void Unflip()
     {
-        // ”½“]‚ðŒ³‚É–ß‚·
+        // åè»¢ã‚’å…ƒã«æˆ»ã™
         if (!isFlipped) return;
         {
             isFlipped = false;
 
-            // XŽ²‚ÆYŽ²‚Ì—¼•û‚ðŒ³‚É–ß‚·
+            // Xè»¸ã¨Yè»¸ã®ä¸¡æ–¹ã‚’å…ƒã«æˆ»ã™
             Vector3 localScale = transform.localScale;
-            localScale.x = -localScale.x; // XŽ²”½“]–ß‚µ
-            localScale.y = -localScale.y; // YŽ²”½“]–ß‚µ
+            localScale.x = -localScale.x; // Xè»¸åè»¢æˆ»ã—
+            localScale.y = -localScale.y; // Yè»¸åè»¢æˆ»ã—
             transform.localScale = localScale;
 
-            // d—Í‚ðŒ³‚É–ß‚·
+            // é‡åŠ›ã‚’å…ƒã«æˆ»ã™
             rb2d.gravityScale *= -1;
 
-            //ˆÊ’u‚ðŒ³‚É–ß‚·
+            //ä½ç½®ã‚’å…ƒã«æˆ»ã™
             Vector3 newPosition = transform.position;
-            newPosition.y = -newPosition.y; // YÀ•WŒ³‚É–ß‚·
+            newPosition.y = -newPosition.y; // Yåº§æ¨™å…ƒã«æˆ»ã™
             transform.position = newPosition;
 
 

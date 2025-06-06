@@ -46,19 +46,19 @@ public class FlipWall : MonoBehaviour
 
     private void Flip(Transform transform,Rigidbody2D rb2d,PlayerController PlayerCTL)
     {
-        // XŽ²‚ÆYŽ²‚Ì—¼•û‚ð”½“]
+        // Xï¿½ï¿½ï¿½ï¿½Yï¿½ï¿½ï¿½Ì—ï¿½ï¿½ï¿½ï¿½ð”½“]
         Vector3 localScale = transform.localScale;
-        localScale.x = -localScale.x; // XŽ²”½“]
-        localScale.y = -localScale.y; // YŽ²”½“]iã‰º”½“]j
+        localScale.x = -localScale.x; // Xï¿½ï¿½ï¿½ï¿½ï¿½]
+        localScale.y = -localScale.y; // Yï¿½ï¿½ï¿½ï¿½ï¿½]ï¿½iï¿½ã‰ºï¿½ï¿½ï¿½]ï¿½j
         transform.localScale = localScale;
 
-        //ˆÊ’u‚ð”½“]
+        //ï¿½Ê’uï¿½ð”½“]
         Vector3 newPosition = transform.position;
-        newPosition.x = -newPosition.x - 0.2f; 
-        newPosition.y = -newPosition.y; // YÀ•W”½“]
+        newPosition.x = -newPosition.x; 
+        newPosition.y = -newPosition.y; // Yï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½]
         transform.position = newPosition;
 
-        // d—Í‚ð”½“]
+        // ï¿½dï¿½Í‚ð”½“]
         rb2d.gravityScale *= -1;
 
         PlayerCTL.isFlipped = !PlayerCTL.isFlipped;

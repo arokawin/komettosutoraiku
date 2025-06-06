@@ -62,6 +62,15 @@ public class PlayerController : MonoBehaviour
         input?.Enable();
     }
 
+<<<<<<< HEAD
+=======
+    private void OnDestroy()
+    {
+        input?.Disable();
+    }
+
+    // Update is called once per frame
+>>>>>>> main
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, GroundLayer);

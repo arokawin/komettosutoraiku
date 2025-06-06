@@ -5,11 +5,11 @@ public class MovePlayer : MonoBehaviour
 {
     public float speed = 3f;
     private float playerSpeed;
-    Rigidbody2D rigidbody2D;
+    Rigidbody2D newrigidbody2D;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        newrigidbody2D = GetComponent<Rigidbody2D>();
     }
     // Update is called once per frame
     void Update()
@@ -20,6 +20,6 @@ public class MovePlayer : MonoBehaviour
         else if (Input.GetKey(KeyCode.D)) playerSpeed = speed;
         // ‰½‚à‚¨‚³‚È‚©‚Á‚½‚çŽ~‚Ü‚é
         else playerSpeed = 0;
-        rigidbody2D.velocity = new Vector2(playerSpeed, rigidbody2D.velocity.y);
+        newrigidbody2D.velocity = new Vector2(playerSpeed, newrigidbody2D.velocity.y);
     }
 }

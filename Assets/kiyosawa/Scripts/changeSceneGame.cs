@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class changeSceneGame : MonoBehaviour
+public class ChangeSceneGame : MonoBehaviour
 {
     public void Restart_button()
     {
@@ -13,8 +13,14 @@ public class changeSceneGame : MonoBehaviour
     {
         SceneManager.LoadScene("Title");
     }
-    public void changeGame_button()
+    public void changeGame_button(bool deleteOldScene = false)
     {
+
         SceneManager.LoadScene("GameMain");
+    }
+
+    public void ReloadScene()
+    {
+        changeGame_button(true);
     }
 }

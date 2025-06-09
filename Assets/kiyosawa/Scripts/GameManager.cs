@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 
 public class GameManager : MonoBehaviour
@@ -11,13 +11,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject WinnerPanel;
     [SerializeField] private GameObject WinP1;
     [SerializeField] private GameObject WinP2;
+    [SerializeField] private TextMeshProUGUI CountText;
+    [SerializeField] private float CountDown = 3.0f;
+    private float currentCountDown;
+    private bool isCountingDown = false;
     public bool gameEnd;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        //  =! ‚Í‹t‚ÌˆÓ–¡
-        gameEnd = true;
+        currentCountDown = CountDown;
+        isCountingDown = true;
+
+        gameEnd = false;
         SoundManager.Instance.PlayBgm(BGMType.BGM1);
 
         WinnerPanel.SetActive(false);
@@ -25,15 +32,15 @@ public class GameManager : MonoBehaviour
         WinP1.SetActive(false);
 
         Time.timeScale = 1;
-        
     }
 
     // Update is called once per frame
-    void Update()
-    {
-       if(Player1.GetComponent<PlayerController>().HP <= 0 || Player2.GetComponent<PlayerController>().HP <= 0)
+     async void Update()
+    { 
+        if (Player1.GetComponent<PlayerController>().HP <= 0 || Player2.GetComponent<PlayerController>().HP <= 0)
         {
-            gameEnd  = false;
+           
+            gameEnd  = true;
             
             //@Instance ‚Å‚ÌŽQÆ
             SoundManager.Instance.PlayBgm(BGMType.BGM2);
@@ -47,6 +54,23 @@ public class GameManager : MonoBehaviour
             {
                 WinP2.SetActive(true);
             }
+        }
+
+        if (!isCountingDown) return;
+
+        if (currentCountDown > 0)
+        {
+            gameEnd = true;
+            currentCountDown -= Time.deltaTime;
+            CountText.text = Mathf.Ceil(currentCountDown).ToString();
+        }
+        else
+        {
+            CountText.text = "Start";
+            gameEnd = false;
+            await Task.Delay(1000);
+            CountText.gameObject.SetActive(false);
+            isCountingDown = false;
         }
     }
 }

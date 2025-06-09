@@ -50,36 +50,36 @@ MonoBehaviour:
   - Type: 0
     Clip: {fileID: 8300000, guid: 4d243329536830444917bc04213aebb6, type: 3}
     Volume: 0.5
-    Loop: 0
+    Loop: 1
   - Type: 1
     Clip: {fileID: 8300000, guid: 80b6d6fa0fb90664bb8f603b11125703, type: 3}
     Volume: 0.5
-    Loop: 0
+    Loop: 1
   - Type: 2
     Clip: {fileID: 8300000, guid: 61b8f925da66c504abda4f2265998369, type: 3}
     Volume: 0.5
-    Loop: 0
+    Loop: 1
   seDataList:
   - Type: 0
     Clip: {fileID: 8300000, guid: cc7a2b077ed59b24c8499c200c86d8d6, type: 3}
     Volume: 0.5
     Loop: 0
-  - Type: 0
+  - Type: 1
     Clip: {fileID: 8300000, guid: 7d84d25b59ad64940b5ee1ef3f8c9490, type: 3}
     Volume: 0.5
-    Loop: 0
-  - Type: 0
+    Loop: 1
+  - Type: 2
     Clip: {fileID: 8300000, guid: 0e43e5180e5d5614082db6e67a767b46, type: 3}
     Volume: 0.5
     Loop: 0
-  - Type: 0
+  - Type: 3
     Clip: {fileID: 8300000, guid: 143d317d6293ef7449140cbc920937b5, type: 3}
     Volume: 0.5
     Loop: 0
   - Type: 4
     Clip: {fileID: 8300000, guid: 6a1a27e6dfbeb8a46a375c9ef0826fa4, type: 3}
     Volume: 0.5
-    Loop: 0
+    Loop: 1
   bgmSource: {fileID: 5652952403229792114}
   seSource: {fileID: 1482102161833339974}
 --- !u!1 &7683565015792540085

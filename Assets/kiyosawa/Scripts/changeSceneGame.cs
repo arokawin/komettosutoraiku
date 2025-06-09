@@ -1,40 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ChangeSceneGame : MonoBehaviour
 {
-    // GetComponent での参照する時
-    // 上で GetComponent で参照したいスクリプト名を参照
-    //private SoundManager soundManager;
-
+    [SerializeField] private Image fadePanel;
+    [SerializeField] private float fadeSpeed = 1.0f;
     public async void Restart_button()
     {
         SoundManager.Instance.PlaySe(SEType.SE1);
         // 500ミリ秒待ってから処理を続ける
-        Debug.Log("se");
         await Task.Delay(500);
-        Debug.Log("seni");
+        StartCoroutine(Fade());
+        await Task.Delay(1000);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         await Task.Yield();
     }
-    public async void changeTitle_button()
+    public async void ChangeTitle_button()
     {
         SoundManager.Instance.PlaySe(SEType.SE1);
         // 500ミリ秒待ってから処理を続ける
         await Task.Delay(500);
+        StartCoroutine(Fade());
+        await Task.Delay(1000);
         SceneManager.LoadScene("Title");
         await Task.Yield();
     }
-    public async void changeGame_button(bool deleteOldScene = false)
+
+    public async void ChangeGame()
     {
-        SoundManager.Instance.PlaySe(SEType.SE1);
-        // 500ミリ秒待ってから処理を続ける
-        await Task.Delay(500);
+        StartCoroutine(Fade());
+        await Task.Delay(1000);
         SceneManager.LoadScene("GameMain");
-        await Task.Yield();
+    }
+
+    public IEnumerator Fade()
+    {
+        fadePanel.enabled = true;
+        float elapsedtime = 0.0f;
+        Color startcolor = fadePanel.color;
+        Color endcolor = new Color(startcolor.r, startcolor.g, startcolor.b, 1.0f);
+        
+        while (elapsedtime < fadeSpeed)
+        {
+            elapsedtime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedtime / fadeSpeed);
+            fadePanel.color = Color.Lerp(startcolor, endcolor, t);
+             yield return null;
+        }
+        fadePanel.color = endcolor;
+        //SceneManager.LoadScene("GameMain");
     }
 
     public async void ReloadScene()
@@ -42,7 +61,13 @@ public class ChangeSceneGame : MonoBehaviour
         SoundManager.Instance.PlaySe(SEType.SE1);
         // 500ミリ秒待ってから処理を続ける
         await Task.Delay(500);
-        changeGame_button(true);
+        StartCoroutine(Fade());
+        await Task.Delay(1000);
+        SceneManager.LoadScene("GameMain");
         await Task.Yield();
+    }
+    public void Credit()
+    {
+        
     }
 }

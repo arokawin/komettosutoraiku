@@ -18,6 +18,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d; // Rigidbody2Dコンポーネントへの参照
 
     [SerializeField]
+    private GameObject star; 
+    [SerializeField] private Transform stars; 
+    private List<GameObject> starList = new List<GameObject>(); 
+    [SerializeField] 
+    private GaugeController gaugeController;
+    [SerializeField]
     private TextMeshProUGUI ammoText;
     [SerializeField]
     private float xSpeed; // X方向移動速度
@@ -46,8 +52,6 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Kometto input;
 
-    //public Sprite normalSprite;   // 通常の見た目
-    //public Sprite flippedSprite;  // 反転時の見た目
 
     private float flipCooldown = 0.5f; // 反転してから再反転までの時間
     private float lastFlipTime = -999f;
@@ -58,7 +62,6 @@ public class PlayerController : MonoBehaviour
     
 
     #endregion
-    // Start is called before the first frame update
 
     public float HP;
     void Start()
@@ -68,7 +71,6 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         input = new Kometto();
         input?.Enable();
-
     }
 
     private void OnDestroy()
@@ -80,34 +82,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
-        //MoveUpdate();
-        //JumpUpdate();
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, GroundLayer);
-        /*if (Time.time - lastFlipTime < flipCooldown)
-            return;*/
-        // Flipの判定
-
-        // 反転ポイントに近いかチェック
-        /*foreach (Transform point in hanten)
-        {
-            if (!isFlipped && Vector2.Distance(transform.position, point.position) < flipTriggerDistance)
-            {
-                //Flip();
-                lastFlipTime = Time.time;
-                return;
-            }
-        }
-
-        // 戻りポイントに近いかチェック
-        foreach (Transform point in modoru)
-        {
-            if (isFlipped && Vector2.Distance(transform.position, point.position) < flipTriggerDistance)
-            {
-                //Unflip();
-                lastFlipTime = Time.time;
-                return;
-            }
-        }*/
 
       transform.position += new Vector3(move.x, 0f, 0f) * xSpeed * Time.deltaTime;
 
@@ -119,14 +95,8 @@ public class PlayerController : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
-        //else transform.position += new Vector3(move.x, 0f, 0f) * xSpeed * Time.deltaTime;
 
-        //if (isFlipped)
-        //{
-        //    xSpeed = -xSpeed;
-        //}
         AmmoCount();
-        AmmoUI();
     }
 
 
@@ -135,19 +105,24 @@ public class PlayerController : MonoBehaviour
         if (ammo < maxammo)
         {
             ctTime += Time.deltaTime;
+            gaugeController.UpdateGauge(ctTime, ammoCt);
 
             if (ctTime >= ammoCt)
             {
                 ammo++;
                 ctTime = 0f;
+                gaugeController.UpdateGauge(0, ammoCt);
+                AmmoUI();
             }
         }
     }
 
     public void AmmoUI()
     {
-        ammoText.text = $"AMMO:{ammo}";
-        //gageImg.fillAmount = ammo / maxammo;
+        if (starList.Count >= maxammo) return;
+        GameObject newStar = Instantiate(star, stars);
+        starList.Add(newStar);
+
     }
     public void OnMove(InputAction.CallbackContext ctx)
     {
@@ -159,7 +134,7 @@ public class PlayerController : MonoBehaviour
         if (ctx.canceled)
         {
             move = Vector2.zero;
-            //gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
         }
 
     }
@@ -177,6 +152,12 @@ public class PlayerController : MonoBehaviour
                 GameObject bullet = Instantiate(_bullet, firepoint.position, Quaternion.identity);
                 bullet.GetComponent<BulletController>().SetDirection(shootDirection);
                 ammo--;
+                if (starList.Count > 0)
+                {
+                    GameObject lastStar = starList[starList.Count - 1];
+                    starList.RemoveAt(starList.Count - 1);
+                    Destroy(lastStar);
+                }
                 SoundManager.Instance.PlaySe(SEType.SE5);
             }
 
@@ -249,57 +230,7 @@ public class PlayerController : MonoBehaviour
         Vector2 velocity = rb2d.velocity;
         // X方向の速度を入力から決定
         velocity.x = xSpeed;
-
-        // 計算した移動速度ベクトルをRigidbody2Dに反映
-        //rb2d.velocity = velocity;
     }
 
-    /*private void Flip()
-    {
-        // キャラクターを反転
-        if (isFlipped) return;
-        {
-            isFlipped = true;
 
-            // X軸とY軸の両方を反転
-            Vector3 localScale = transform.localScale;
-            localScale.x = -localScale.x; // X軸反転
-            localScale.y = -localScale.y; // Y軸反転（上下反転）
-            transform.localScale = localScale;
-
-            //位置を反転
-            Vector3 newPosition = transform.position;
-            newPosition.y = -newPosition.y; // Y座標反転
-            transform.position = newPosition;
-
-            // 重力を反転
-            rb2d.gravityScale *= -1;
-
-        }
-    }
-
-    private void Unflip()
-    {
-        // 反転を元に戻す
-        if (!isFlipped) return;
-        {
-            isFlipped = false;
-
-            // X軸とY軸の両方を元に戻す
-            Vector3 localScale = transform.localScale;
-            localScale.x = -localScale.x; // X軸反転戻し
-            localScale.y = -localScale.y; // Y軸反転戻し
-            transform.localScale = localScale;
-
-            // 重力を元に戻す
-            rb2d.gravityScale *= -1;
-
-            //位置を元に戻す
-            Vector3 newPosition = transform.position;
-            newPosition.y = -newPosition.y; // Y座標元に戻す
-            transform.position = newPosition;
-
-
-        }
-    }*/
 }

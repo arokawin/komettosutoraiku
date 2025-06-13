@@ -42,8 +42,6 @@ public class GameManager : MonoBehaviour
            
             gameEnd  = true;
             
-            //Å@Instance Ç≈ÇÃéQè∆
-            SoundManager.Instance.PlayBgm(BGMType.BGM2);
 
             WinnerPanel.SetActive(true);
             if (Player1.GetComponent<PlayerController>().HP <= 0)

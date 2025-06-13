@@ -27,6 +27,7 @@ public class ChangeSceneGame : MonoBehaviour
         await Task.Delay(500);
         StartCoroutine(Fade());
         await Task.Delay(1000);
+        SoundManager.Instance.PlayBgm(BGMType.BGM3);
         SceneManager.LoadScene("Title");
         await Task.Yield();
     }

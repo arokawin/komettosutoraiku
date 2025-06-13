@@ -8,6 +8,7 @@ public enum BGMType
     BGM1,
     BGM2,
     BGM3,
+    BGM4,
     Null
 }
 
@@ -67,7 +68,7 @@ public class SoundManager : MonoBehaviour
             else return;
             DontDestroyOnLoad(this.gameObject);
             PlayBgm(BGMType.BGM3);
-        }
+    }
 
         // Update is called once per frame
         void Update()

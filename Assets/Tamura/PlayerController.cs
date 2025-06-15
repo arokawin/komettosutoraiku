@@ -149,6 +149,7 @@ public class PlayerController : MonoBehaviour
         {
             if (ammo > 0)
             {
+                if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
                 GameObject bullet = Instantiate(_bullet, firepoint.position, Quaternion.identity);
                 bullet.GetComponent<BulletController>().SetDirection(shootDirection);
                 ammo--;
@@ -170,7 +171,7 @@ public class PlayerController : MonoBehaviour
         {   
             if (isGrounded && ctx.ReadValueAsButton())
             {
-
+                if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
                 rb2d.velocity = new Vector2(rb2d.velocity.x, isFlipped ? -jumpPower : jumpPower); //今の重力方向にジャンプ
                 SoundManager.Instance.PlaySe(SEType.SE4);
             }

@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     public Transform[] hanten;
     public Transform[] modoru;
-    private Vector2 move;
+    public Vector2 move;
     private bool jump;
 
     public float flipTriggerDistance = 0.2f; //近づいたら反応

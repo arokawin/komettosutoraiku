@@ -8,6 +8,8 @@ public class FlipWall : MonoBehaviour
     private float coolTime;
     private float time;
     private bool flipCheck;
+    [SerializeField]
+    private Vector3 _offset;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +60,16 @@ public class FlipWall : MonoBehaviour
         Vector3 newPosition = transform.position;
         newPosition.x = -newPosition.x; 
         newPosition.y = -newPosition.y; // Y���W���]
-        transform.position = newPosition;
+        if ((transform.GetComponent<PlayerController>().move.x < 0 && transform.GetComponent<Rigidbody2D>().gravityScale > 0) ||
+            (transform.GetComponent<PlayerController>().move.x > 0 && transform.GetComponent<Rigidbody2D>().gravityScale < 0))
+        {
+            transform.position = newPosition - (_offset * transform.GetComponent<Rigidbody2D>().gravityScale);
+        }
+        if ((transform.GetComponent<PlayerController>().move.x < 0 && transform.GetComponent<Rigidbody2D>().gravityScale < 0) ||
+            (transform.GetComponent<PlayerController>().move.x > 0 && transform.GetComponent<Rigidbody2D>().gravityScale > 0))
+        {
+            transform.position = newPosition + (_offset * transform.GetComponent<Rigidbody2D>().gravityScale);
+        }
 
         // �d�͂𔽓]
         rb2d.gravityScale *= -1;

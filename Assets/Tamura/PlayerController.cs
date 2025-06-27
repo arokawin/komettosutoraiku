@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("inseki")|| collision.gameObject.CompareTag("bullet1")|| collision.gameObject.CompareTag("bullet2"))
         {
-            SoundManager.Instance.PlayBgm(BGMType.BGM2);
+            //SoundManager.Instance.PlayBgm(BGMType.BGM2);
             HP--;
         }
 

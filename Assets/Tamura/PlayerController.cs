@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d; // Rigidbody2Dコンポーネントへの参照
 
     [SerializeField]
+    private GameObject aimSpPrefab;
+    private GameObject aimSpInstance;
+    [SerializeField]
     private GameObject star; 
     [SerializeField] private Transform stars; 
     private List<GameObject> starList = new List<GameObject>(); 
@@ -71,6 +74,9 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         input = new Kometto();
         input?.Enable();
+
+        aimSpInstance = Instantiate(aimSpPrefab, transform.position, Quaternion.identity);
+        aimSpInstance.SetActive(false);
     }
 
     private void OnDestroy()
@@ -97,6 +103,30 @@ public class PlayerController : MonoBehaviour
         }
 
         AmmoCount();
+
+        if (shootDirection.magnitude < 0.1f)
+        {
+
+            aimSpInstance.SetActive(false);
+            return;
+        }
+
+        aimSpInstance.SetActive(true);
+
+        Vector3 pos = transform.position + (Vector3)(shootDirection.normalized * 1f);
+        pos.z = -1f;
+        aimSpInstance.transform.position = pos;
+
+        float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
+        aimSpInstance.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+
+        var aim = aimSpInstance.GetComponent<BulletController>();
+        if (aim != null)
+        {
+            aim.SetDirection(shootDirection);
+        }
+
+
     }
 
 

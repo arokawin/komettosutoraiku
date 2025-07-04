@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowTransform : MonoBehaviour
 {
-    [SerializeField] private Transform target; 
+    [SerializeField] private Transform target;
     [SerializeField] private Vector3 offset;
     private RectTransform rectTransform;
 
@@ -34,7 +34,15 @@ public class FollowTransform : MonoBehaviour
     {
         if (target)
         {
-            Vector2 screenPos = Camera.main.WorldToScreenPoint(target.position + offset);
+            Vector3 actualOffset = offset;
+
+            PlayerController player = target.GetComponent<PlayerController>();
+            if (player != null && player.isFlipped)
+            {
+                actualOffset.y = -offset.y;
+            }
+
+            Vector2 screenPos = Camera.main.WorldToScreenPoint(target.position + actualOffset);
             rectTransform.position = screenPos;
         }
     }

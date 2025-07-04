@@ -27,8 +27,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] 
     private GaugeController gaugeController;
     [SerializeField]
-    private TextMeshProUGUI ammoText;
-    [SerializeField]
     private float xSpeed; // X方向移動速度
     [SerializeField]
     private float jumpPower;

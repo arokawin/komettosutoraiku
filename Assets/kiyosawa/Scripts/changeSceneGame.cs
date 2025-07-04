@@ -15,7 +15,7 @@ public class ChangeSceneGame : MonoBehaviour
         SoundManager.Instance.PlaySe(SEType.SE1);
         // 500ƒ~ƒŠ•b‘Ò‚Á‚Ä‚©‚çˆ—‚ğ‘±‚¯‚é
         await Task.Delay(500);
-        StartCoroutine(Fade());
+        StartCoroutine(FadeIn());
         await Task.Delay(1000);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         await Task.Yield();
@@ -25,7 +25,7 @@ public class ChangeSceneGame : MonoBehaviour
         SoundManager.Instance.PlaySe(SEType.SE1);
         // 500ƒ~ƒŠ•b‘Ò‚Á‚Ä‚©‚çˆ—‚ğ‘±‚¯‚é
         await Task.Delay(500);
-        StartCoroutine(Fade());
+        StartCoroutine(FadeIn());
         await Task.Delay(1000);
         SoundManager.Instance.PlayBgm(BGMType.BGM3);
         SceneManager.LoadScene("Title");
@@ -34,12 +34,13 @@ public class ChangeSceneGame : MonoBehaviour
 
     public async void ChangeGame()
     {
-        StartCoroutine(Fade());
+        SoundManager.Instance.PlaySe(SEType.SE1);
+        StartCoroutine(FadeIn());
         await Task.Delay(1000);
         SceneManager.LoadScene("GameMain");
     }
 
-    public IEnumerator Fade()
+    public IEnumerator FadeIn()
     {
         fadePanel.enabled = true;
         float elapsedtime = 0.0f;
@@ -57,12 +58,29 @@ public class ChangeSceneGame : MonoBehaviour
         //SceneManager.LoadScene("GameMain");
     }
 
+    public IEnumerator FadeOut()
+    {
+        float elapsedtime = 0.0f;
+        Color endcolor = fadePanel.color;
+        Color startcolor = new Color(endcolor.r, endcolor.g, endcolor.b, 1.0f);
+
+        while (elapsedtime < fadeSpeed)
+        {
+            elapsedtime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedtime / fadeSpeed);
+            fadePanel.color = Color.Lerp(startcolor, endcolor, t);
+            yield return null;
+        }
+        fadePanel.color = startcolor;
+        fadePanel.enabled = false;
+    }
+
     public async void ReloadScene()
     {
         SoundManager.Instance.PlaySe(SEType.SE1);
         // 500ƒ~ƒŠ•b‘Ò‚Á‚Ä‚©‚çˆ—‚ğ‘±‚¯‚é
         await Task.Delay(500);
-        StartCoroutine(Fade());
+        StartCoroutine(FadeIn());
         await Task.Delay(1000);
         SceneManager.LoadScene("GameMain");
         await Task.Yield();

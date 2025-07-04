@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 403010085813855613}
   - component: {fileID: 1134700447654249420}
   - component: {fileID: 3657628797156154044}
-  - component: {fileID: 3650715457588632286}
   - component: {fileID: -7270291820470582948}
+  - component: {fileID: 3603020095674072527}
   m_Layer: 7
   m_Name: MeteoriteUpRight
   m_TagString: inseki
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.21, y: 7.36, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 8563dd4227c03c44b8235862ed8516c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf374b460823ed044bed13a2817c6291, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,20 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff8bffc6ec92534bb9f1731f87c2347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3650715457588632286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6858908498451618362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb8d215e9e3679e479453b86c5ba0fb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: -5
-  _direction: -5
 --- !u!58 &-7270291820470582948
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -145,6 +131,33 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.9236987, y: -2.486691}
+  m_Offset: {x: 0, y: -2}
   serializedVersion: 2
-  m_Radius: 1.2749174
+  m_Radius: 1.5692962
+--- !u!50 &3603020095674072527
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6858908498451618362}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

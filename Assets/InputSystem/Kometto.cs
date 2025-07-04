@@ -252,8 +252,8 @@ public partial class @Kometto: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7ce993ad-06bd-4a48-b314-6f2ba5e16b22"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""id"": ""03d5ba4e-f0af-4157-98a6-89922bed4431"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -268,17 +268,6 @@ public partial class @Kometto: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""AIm"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""42dcd203-5d7e-4d4f-9707-43bcfaa81b61"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
                     ""action"": ""AIm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -309,17 +298,6 @@ public partial class @Kometto: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""2d3f7cc7-b279-49c2-a122-04dd53695dfa"",
                     ""path"": ""<DualShockGamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""88cfed25-f553-43a6-8897-bed27358e9cf"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",

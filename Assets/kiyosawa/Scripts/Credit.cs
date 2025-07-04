@@ -15,6 +15,7 @@ public class Credit : MonoBehaviour
         bool isActive = false;
         button.onClick.AddListener(() =>
         {
+            SoundManager.Instance.PlaySe(SEType.SE2);
             isActive = !isActive;
             imageGameobject.SetActive(isActive);
         });

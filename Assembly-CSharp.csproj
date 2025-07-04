@@ -64,6 +64,7 @@
     <Compile Include="Assets\kiyosawa\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Tamura\FollowTransform.cs" />
     <Compile Include="Assets\Tamura\PlayerJoinManager.cs" />
+    <Compile Include="Assets\kiyosawa\Scripts\Random.cs" />
     <Compile Include="Assets\InputSystem\Kometto.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\changeSceneGame.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\ResultUiController.cs" />
@@ -72,7 +73,6 @@
     <Compile Include="Assets\kiyosawa\Scripts\RandomUp.cs" />
     <Compile Include="Assets\Tamura\FlipWall.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\Credit.cs" />
-    <Compile Include="Assets\kiyosawa\Scripts\DirectionMeteorite.cs" />
     <Compile Include="Assets\Tamura\PlayerController.cs" />
     <Compile Include="Assets\Tamura\GaugeController.cs" />
   </ItemGroup>

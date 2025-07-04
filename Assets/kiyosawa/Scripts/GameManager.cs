@@ -2,6 +2,8 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 
 
 public class GameManager : MonoBehaviour
@@ -13,13 +15,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject WinP2;
     [SerializeField] private TextMeshProUGUI CountText;
     [SerializeField] private float CountDown = 3.0f;
+    [SerializeField] private ChangeSceneGame sceneGame;
     private float currentCountDown;
     private bool isCountingDown = false;
     public bool gameEnd;
-    
+    public int P1WinCount = 0;
+    public int P2WinCount = 0;
+
+    [SerializeField] private List<GameObject> Round = new List<GameObject>();
+
 
     // Start is called before the first frame update
-    void Start()
+     void Start()
     {
         currentCountDown = CountDown;
         isCountingDown = true;
@@ -32,26 +39,51 @@ public class GameManager : MonoBehaviour
         WinP1.SetActive(false);
 
         Time.timeScale = 1;
+
+        Round[0].SetActive(true);
+
     }
 
     // Update is called once per frame
      async void Update()
-    { 
+    {
+        var Sum = P1WinCount + P2WinCount;
+
         if (Player1.GetComponent<PlayerController>().HP <= 0 || Player2.GetComponent<PlayerController>().HP <= 0)
         {
-           
             gameEnd  = true;
             
+            StartCoroutine(sceneGame.GetComponent<ChangeSceneGame>().FadeIn());
 
-            WinnerPanel.SetActive(true);
-            if (Player1.GetComponent<PlayerController>().HP <= 0)
+
+            if (P1WinCount >= 2 || P2WinCount >= 2)
             {
-                WinP1.SetActive(true);
+                WinnerPanel.SetActive(true);
+                if (Player1.GetComponent<PlayerController>().HP <= 0)
+                {
+                    WinP1.SetActive(true);
+                }
+                else if (Player2.GetComponent<PlayerController>().HP <= 0)
+                {
+                    WinP2.SetActive(true);
+                }
             }
-            else if(Player2.GetComponent<PlayerController>().HP <= 0)
+
+            if (P1WinCount < 2 || P2WinCount < 2)
             {
-                WinP2.SetActive(true);
+                Player1.GetComponent<PlayerController>().HP = 1;
+                Player2.GetComponent<PlayerController>().HP = 1;
+                currentCountDown = CountDown;
+                isCountingDown = true;
+                CountText.gameObject.SetActive(isCountingDown);
+                CountText.gameObject.SetActive(true);
+
+                //Round[Sum - 1].SetActive(false);
+                //Round[Sum].SetActive(true);
+
+                StartCoroutine(sceneGame.GetComponent<ChangeSceneGame>().FadeOut());
             }
+
         }
 
         if (!isCountingDown) return;

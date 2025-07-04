@@ -62,10 +62,10 @@
   <ItemGroup>
     <Compile Include="Assets\kiyosawa\Scripts\MeteoriteDestroy.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\SoundManager.cs" />
-    <Compile Include="Assets\kiyosawa\Scripts\ChangeSceneGame.cs" />
     <Compile Include="Assets\Tamura\PlayerJoinManager.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\Random.cs" />
     <Compile Include="Assets\InputSystem\Kometto.cs" />
+    <Compile Include="Assets\kiyosawa\Scripts\changeSceneGame.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\ResultUiController.cs" />
     <Compile Include="Assets\Tamura\BulletController.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\GameManager.cs" />

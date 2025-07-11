@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
 
     private int HantenIndex = 0; // 現在の反転地点インデックス
     private int ModoruIndex = 0; // 現在の戻る地点インデックス
+    private Animator anim;
 
     
 
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour
 
         aimSpInstance = Instantiate(aimSpPrefab, transform.position, Quaternion.identity);
         aimSpInstance.SetActive(false);
+        anim = GetComponent<Animator>();
     }
 
     private void OnDestroy()
@@ -91,6 +93,7 @@ public class PlayerController : MonoBehaviour
 
       transform.position += new Vector3(move.x, 0f, 0f) * xSpeed * Time.deltaTime;
 
+        anim.SetBool("Move", move.x != 0);
         if (move.x < 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);

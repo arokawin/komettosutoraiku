@@ -23,7 +23,7 @@ public class RandomUp : MonoBehaviour
     }
     private void Update()
     {
-        if (gameManager.GetComponent<GameManager>().gameEnd)
+        if (GameManager.Instance.GameEnd == true)
         {
             // 子オブジェクトに生成
             foreach (Transform child in gameObject.transform)
@@ -35,7 +35,7 @@ public class RandomUp : MonoBehaviour
 
     void Randomkougeki_UpRight()
     {
-        if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
+        if (GameManager.Instance.GameEnd == true) return;
         var UpDown = Random.Range(0, 2);
         switch (UpDown)
         {

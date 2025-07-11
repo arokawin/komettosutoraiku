@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - bullet1
   - bullet2
+  - Star
   layers:
   - Default
   - TransparentFX

@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
 
     private int HantenIndex = 0; // 現在の反転地点インデックス
     private int ModoruIndex = 0; // 現在の戻る地点インデックス
+    private Animator anim;
 
     
 
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour
 
         aimSpInstance = Instantiate(aimSpPrefab, transform.position, Quaternion.identity);
         aimSpInstance.SetActive(false);
+        anim = GetComponent<Animator>();
     }
 
     private void OnDestroy()
@@ -89,8 +91,9 @@ public class PlayerController : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, GroundLayer);
 
-      transform.position += new Vector3(move.x, 0f, 0f) * xSpeed * Time.deltaTime;
+     // transform.position += new Vector3(move.x, 0f, 0f) * xSpeed * Time.deltaTime;
 
+        anim.SetBool("Move", move.x != 0);
         if (move.x < 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
@@ -256,10 +259,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // 移動速度ベクトルを現在値から取得
+        if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
         Vector2 velocity = rb2d.velocity;
-        // X方向の速度を入力から決定
-        velocity.x = xSpeed;
+        velocity.x = move.x * xSpeed;
+        rb2d.velocity = velocity;
     }
 
 

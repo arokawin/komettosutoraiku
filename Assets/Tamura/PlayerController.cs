@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     private float ammoCt;
     private int maxammo = 5; //最大弾数
     private int ammo = 0;  //今の弾数
-    private float ctTime = 0f;
+    public float ctTime = 0f;
     private Vector2 shootDirection;
     private bool isGrounded;
     public Transform[] hanten;
@@ -61,7 +61,14 @@ public class PlayerController : MonoBehaviour
     private int ModoruIndex = 0; // 現在の戻る地点インデックス
     private Animator anim;
 
-    
+    private Vector3 FirstPos;
+    private bool FirstFlipX;
+    private bool FirstFlipY;
+    private float FirstGravity;
+    private float MaxHP = 1;
+    private float FirstCtTime = 0f;
+
+    private PlayerInput PlInput;
 
     #endregion
 
@@ -71,12 +78,18 @@ public class PlayerController : MonoBehaviour
         int maxLength = Mathf.Max(hanten.Length, modoru.Length);
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        PlInput = GetComponent<PlayerInput>(); 
         input = new Kometto();
         input?.Enable();
 
         aimSpInstance = Instantiate(aimSpPrefab, transform.position, Quaternion.identity);
         aimSpInstance.SetActive(false);
         anim = GetComponent<Animator>();
+
+        FirstPos = transform.position;
+        FirstFlipX = spriteRenderer.flipX;
+        FirstFlipY = spriteRenderer.flipY;
+        FirstGravity = rb2d.gravityScale;
     }
 
     private void OnDestroy()
@@ -87,7 +100,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
+        if (gameManager.GetComponent<GameManager>().GameEnd == true) return;
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, GroundLayer);
 
@@ -130,7 +143,15 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
+    public void ResetPlayer()
+    {
+        transform.position = FirstPos;
+        rb2d.gravityScale = FirstGravity;
+        spriteRenderer.flipX = FirstFlipX;
+        spriteRenderer.flipY = FirstFlipY;
+        HP = MaxHP;
+        ctTime = FirstCtTime;
+    }
     public void AmmoCount()
     {
         if (ammo < maxammo)
@@ -180,7 +201,7 @@ public class PlayerController : MonoBehaviour
         {
             if (ammo > 0)
             {
-                if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
+                if (gameManager.GetComponent<GameManager>().GameEnd == true) return;
                 GameObject bullet = Instantiate(_bullet, firepoint.position, Quaternion.identity);
                 bullet.GetComponent<BulletController>().SetDirection(shootDirection);
                 ammo--;
@@ -198,23 +219,21 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed)
+        if (ctx.performed && isGrounded)
         {   
-            if (isGrounded && ctx.ReadValueAsButton())
-            {
-                if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
-                rb2d.velocity = new Vector2(rb2d.velocity.x, isFlipped ? -jumpPower : jumpPower); //今の重力方向にジャンプ
-                SoundManager.Instance.PlaySe(SEType.SE4);
-            }
+            if (gameManager.GetComponent<GameManager>().GameEnd == true) return;
+            rb2d.velocity = new Vector2(rb2d.velocity.x, isFlipped ? -jumpPower : jumpPower); //今の重力方向にジャンプ
+            SoundManager.Instance.PlaySe(SEType.SE4);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private async void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.CompareTag("inseki")|| collision.gameObject.CompareTag("bullet1")|| collision.gameObject.CompareTag("bullet2"))
+        if (collider.gameObject.CompareTag("inseki")|| collider.gameObject.CompareTag("bullet1")|| collider.gameObject.CompareTag("bullet2"))
         {
             //SoundManager.Instance.PlayBgm(BGMType.BGM2);
-            HP--;
+            GameManager.Instance.SudLifeCount(PlInput.user.index);
+            await GameManager.Instance.NextRound();
         }
 
     }
@@ -259,7 +278,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
+        if (gameManager.GetComponent<GameManager>().GameEnd == true) return;
         Vector2 velocity = rb2d.velocity;
         velocity.x = move.x * xSpeed;
         rb2d.velocity = velocity;

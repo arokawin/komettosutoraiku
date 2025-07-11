@@ -74,19 +74,19 @@ public class RandomMeteo : MonoBehaviour
     }
     /*void Randomkougeki_UpLeft()
     {
-        if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
+        if (gameManager.GetComponent<GameManager>().GameEnd == true) return;
         Instantiate(inseki2, new Vector2(Random.Range(-9.4f, 13f),10f),
             transform.rotation);
     }
     void Randomkougeki_UnderLeft()
     {
-        if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
+        if (gameManager.GetComponent<GameManager>().GameEnd == true) return;
         Instantiate(inseki3, new Vector2(Random.Range(9.4f, -13f), -10f),
             transform.rotation);
     }
     void Randomkougeki_UnderRight()
     {
-        if (gameManager.GetComponent<GameManager>().gameEnd == true) return;
+        if (gameManager.GetComponent<GameManager>().GameEnd == true) return;
         Instantiate(inseki4, new Vector2(Random.Range(9.4f, -13f), -10f),
             transform.rotation);
     }*/

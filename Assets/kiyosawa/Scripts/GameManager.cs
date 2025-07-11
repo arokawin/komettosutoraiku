@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
         // // リザルト表記
         //// if (PlayerControllers[0].HP <= 0 || PlayerControllers[1].HP <= 0)
         // {
-        //     gameEnd  = true;
+        //     GameEnd  = true;
 
         //     StartCoroutine(sceneGame.GetComponent<ChangeSceneGame>().FadeIn());
 
@@ -171,6 +171,7 @@ public class GameManager : MonoBehaviour
     public void SudLifeCount(int playerNum)
     {
         LifeCounts[playerNum]--;
+        //await NextRound();
     }
 
     // Winner表示
@@ -178,20 +179,20 @@ public class GameManager : MonoBehaviour
     {
         gameEnd = true;
         RoundCount++;
-        await fadeManager.FadeIn();
+        await fadeManager.FadeOut();
         //sceneGame.GetComponent<ChangeSceneGame>().FadeIn();
         int LifeNum = Array.IndexOf(LifeCounts, 0);
 
         if (LifeNum == 0)
         {
-            await fadeManager.FadeOut();
+            await fadeManager.FadeIn();
             //sceneGame.FadeOut();
             WinnerPanel.SetActive(true);
             WinP2.SetActive(true);
         }
         else if (LifeNum == 1)
         {
-            await fadeManager.FadeOut();
+            await fadeManager.FadeIn();
             //sceneGame.FadeOut();
             WinnerPanel.SetActive(true);
             WinP1.SetActive(true);
@@ -200,20 +201,8 @@ public class GameManager : MonoBehaviour
         {
             for (int i = 0; PlayerControllers.Count > i; i++)
             {
-                PlayerControllers[i].HP = 1;
-                PlayersList[i].transform.position = PlayersStPosList[i];
-                switch(i)
-                {
-                    case 0:
-                        PlayerRigidbody2D[i].gravityScale = 1;
-                        break;
-                    case 1:
-                        PlayerRigidbody2D[i].gravityScale = -1;
-                        break;
-                }
                 GaugesList[i].UpdateGauge(0, 5);
-                PlayerControllers[i].ctTime = 0;
-
+                PlayerControllers[i].ResetPlayer();
             }
             //Player1.HP = 1;
             //Player2.HP = 1;
@@ -235,9 +224,10 @@ public class GameManager : MonoBehaviour
             Round[RoundCount -1].SetActive(false);
             Round[RoundCount].SetActive(true);
 
-            await fadeManager.FadeOut();
+            await fadeManager.FadeIn();
             //sceneGame.FadeOut();
 
+            gameEnd = false;
             isCountingDown = true;
         }
     }

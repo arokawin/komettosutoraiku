@@ -1239,21 +1239,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a01f04ac9168a45afb77ba1fd0c6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1: {fileID: 6520267520921438586}
-  Player2: {fileID: 6520267522202834921}
+  PlayersList:
+  - {fileID: 6520267520921438586}
+  - {fileID: 6520267522202834921}
+  PlayerControllers: []
+  GaugesList:
+  - {fileID: 168402925}
+  - {fileID: 143375449}
+  Round:
+  - {fileID: 754521990}
+  - {fileID: 1358962571}
+  - {fileID: 1519473093}
+  PlayerRigidbody2D: []
   WinnerPanel: {fileID: 1191350145}
   WinP1: {fileID: 519341409}
   WinP2: {fileID: 1677507684}
   CountText: {fileID: 636402507}
   CountDown: 3
   sceneGame: {fileID: 1632105662}
-  gameEnd: 0
-  P1WinCount: 0
-  P2WinCount: 0
-  Round:
-  - {fileID: 754521990}
-  - {fileID: 1358962571}
-  - {fileID: 1519473093}
+  PlayersStPosList: []
+  fadeManager: {fileID: 1389649978}
 --- !u!4 &559870235
 Transform:
   m_ObjectHideFlags: 0
@@ -1419,7 +1424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &639039456
 Transform:
   m_ObjectHideFlags: 0
@@ -3509,6 +3514,7 @@ GameObject:
   - component: {fileID: 1389649975}
   - component: {fileID: 1389649977}
   - component: {fileID: 1389649976}
+  - component: {fileID: 1389649978}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -3525,7 +3531,7 @@ RectTransform:
   m_GameObject: {fileID: 1389649974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.05, y: 1.1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 214699258}
@@ -3556,7 +3562,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3573,6 +3579,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389649974}
   m_CullTransparentMesh: 1
+--- !u!114 &1389649978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389649974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efecc92a460d3d9449b1e6e1f6be3f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadePanel: {fileID: 1389649976}
+  fadeSpeed: 1
 --- !u!1001 &1391180168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5415,7 +5435,7 @@ PrefabInstance:
     - target: {fileID: 176086100422450497, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: fadePanel
       value: 
-      objectReference: {fileID: 1389649976}
+      objectReference: {fileID: 1389649978}
     - target: {fileID: 1316917592736194634, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
@@ -5571,10 +5591,10 @@ PrefabInstance:
     - target: {fileID: 4369276877300719333, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: fadePanel
       value: 
-      objectReference: {fileID: 1389649976}
+      objectReference: {fileID: 1389649978}
     - target: {fileID: 4843488160523555245, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5106202338480592825, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_SizeDelta.x

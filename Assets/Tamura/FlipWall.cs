@@ -44,7 +44,7 @@ public class FlipWall : MonoBehaviour
 
     private void Flip(Transform transform, Rigidbody2D rb2d, PlayerController PlayerCTL, SpriteRenderer sprite)
     {
-        sprite.flipX = !sprite.flipX;
+        sprite.flipX = sprite.flipX;
         sprite.flipY = !sprite.flipY;
 
         Vector3 newPosition = transform.position;

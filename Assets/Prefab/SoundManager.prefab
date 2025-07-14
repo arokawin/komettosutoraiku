@@ -62,23 +62,23 @@ MonoBehaviour:
   seDataList:
   - Type: 0
     Clip: {fileID: 8300000, guid: cc7a2b077ed59b24c8499c200c86d8d6, type: 3}
-    Volume: 0.5
+    Volume: 1
     Loop: 0
   - Type: 1
     Clip: {fileID: 8300000, guid: 7d84d25b59ad64940b5ee1ef3f8c9490, type: 3}
-    Volume: 0.5
+    Volume: 1
     Loop: 1
   - Type: 2
     Clip: {fileID: 8300000, guid: 0e43e5180e5d5614082db6e67a767b46, type: 3}
-    Volume: 0.5
+    Volume: 1
     Loop: 0
   - Type: 3
     Clip: {fileID: 8300000, guid: 143d317d6293ef7449140cbc920937b5, type: 3}
-    Volume: 0.5
+    Volume: 1
     Loop: 0
   - Type: 4
     Clip: {fileID: 8300000, guid: 6a1a27e6dfbeb8a46a375c9ef0826fa4, type: 3}
-    Volume: 0.5
+    Volume: 1
     Loop: 1
   bgmSource: {fileID: 5652952403229792114}
   seSource: {fileID: 1482102161833339974}

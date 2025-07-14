@@ -180,20 +180,17 @@ public class GameManager : MonoBehaviour
         gameEnd = true;
         RoundCount++;
         await fadeManager.FadeOut();
-        //sceneGame.GetComponent<ChangeSceneGame>().FadeIn();
         int LifeNum = Array.IndexOf(LifeCounts, 0);
 
         if (LifeNum == 0)
         {
             await fadeManager.FadeIn();
-            //sceneGame.FadeOut();
             WinnerPanel.SetActive(true);
             WinP2.SetActive(true);
         }
         else if (LifeNum == 1)
         {
             await fadeManager.FadeIn();
-            //sceneGame.FadeOut();
             WinnerPanel.SetActive(true);
             WinP1.SetActive(true);
         }
@@ -220,6 +217,9 @@ public class GameManager : MonoBehaviour
 
             CountText.gameObject.SetActive(isCountingDown);
             CountText.gameObject.SetActive(true);
+
+           // var animator = GetComponent<Animator>();
+           // animator.Play("idle");
 
             Round[RoundCount -1].SetActive(false);
             Round[RoundCount].SetActive(true);

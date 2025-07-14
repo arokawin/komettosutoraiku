@@ -21,7 +21,7 @@ public class ChangeSceneGame : MonoBehaviour
         SoundManager.Instance.PlaySe(SEType.SE1);
         // 500ƒ~ƒŠ•b‘Ò‚Á‚Ä‚©‚çˆ—‚ğ‘±‚¯‚é
         await Task.Delay(500);
-        await fadePanel.FadeIn();
+        await fadePanel.FadeOut();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public async void ChangeTitle_button()
@@ -30,7 +30,7 @@ public class ChangeSceneGame : MonoBehaviour
         SoundManager.Instance.PlaySe(SEType.SE1);
         // 500ƒ~ƒŠ•b‘Ò‚Á‚Ä‚©‚çˆ—‚ğ‘±‚¯‚é
         await Task.Delay(500);
-        await fadePanel.FadeIn();
+        await fadePanel.FadeOut();
         SoundManager.Instance.PlayBgm(BGMType.BGM3);
         SceneManager.LoadScene("Title");
     }
@@ -39,7 +39,7 @@ public class ChangeSceneGame : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         SoundManager.Instance.PlaySe(SEType.SE1);
-        await fadePanel.FadeIn();
+        await fadePanel.FadeOut();
         SceneManager.LoadScene("GameMain");
     }
 
@@ -55,10 +55,8 @@ public class ChangeSceneGame : MonoBehaviour
         SoundManager.Instance.PlaySe(SEType.SE1);
         // 500ƒ~ƒŠ•b‘Ò‚Á‚Ä‚©‚çˆ—‚ğ‘±‚¯‚é
         await Task.Delay(500);
-        //FadeIn();
-        await Task.Delay(1000);
+        await fadePanel.FadeOut();
         SceneManager.LoadScene("GameMain");
-        await Task.Yield();
     }
     public void Credit()
     {
@@ -68,6 +66,6 @@ public class ChangeSceneGame : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         FadeManager fade = FindObjectOfType<FadeManager>();
-        await fade.FadeOut();
+        await fade.FadeIn();
     }
 }

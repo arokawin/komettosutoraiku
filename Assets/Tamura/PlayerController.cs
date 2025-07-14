@@ -155,6 +155,12 @@ public class PlayerController : MonoBehaviour
         //velocity.x = 0f;
         Debug.Log(move.x);
         anim.SetBool("Move", move.x != 0);
+        // 子オブジェクトの全削除
+        foreach (Transform n in stars.transform)
+        {
+            GameObject.Destroy(n.gameObject);
+        }
+
     }
     public void AmmoCount()
     {
@@ -180,6 +186,9 @@ public class PlayerController : MonoBehaviour
         starList.Add(newStar);
 
     }
+
+
+
     public void OnMove(InputAction.CallbackContext ctx)
     {
         if (ctx.started) return;

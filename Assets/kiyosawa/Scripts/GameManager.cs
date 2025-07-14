@@ -11,9 +11,10 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> PlayersList = new List<GameObject>();
     [SerializeField] private List<PlayerController> PlayerControllers = new List<PlayerController>();
-    public List<GaugeController> GaugesList = new List<GaugeController>();
+                     public  List<GaugeController> GaugesList = new List<GaugeController>();
     [SerializeField] private List<GameObject> Round = new List<GameObject>();
     [SerializeField] private List<Rigidbody2D> PlayerRigidbody2D = new List<Rigidbody2D>();
+    [SerializeField] private List<Animator> PlayerAnimations = new List<Animator>();
 
 
     [SerializeField] private GameObject WinnerPanel;
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerControllers.Add(PlayersList[i].GetComponent<PlayerController>());
             PlayerRigidbody2D.Add(PlayersList[i].GetComponent<Rigidbody2D>());
+            PlayerAnimations.Add(PlayersList[i].GetComponent<Animator>());
         }
 
 
@@ -184,12 +186,20 @@ public class GameManager : MonoBehaviour
 
         if (LifeNum == 0)
         {
+            for (int i = 0; PlayerControllers.Count > i; i++)
+            {
+                PlayerControllers[i].ResetPlayer();
+            }
             await fadeManager.FadeIn();
             WinnerPanel.SetActive(true);
             WinP2.SetActive(true);
         }
         else if (LifeNum == 1)
         {
+            for (int i = 0; PlayerControllers.Count > i; i++)
+            {
+                PlayerControllers[i].ResetPlayer();
+            }
             await fadeManager.FadeIn();
             WinnerPanel.SetActive(true);
             WinP1.SetActive(true);
@@ -217,9 +227,6 @@ public class GameManager : MonoBehaviour
 
             CountText.gameObject.SetActive(isCountingDown);
             CountText.gameObject.SetActive(true);
-
-           // var animator = GetComponent<Animator>();
-           // animator.Play("idle");
 
             Round[RoundCount -1].SetActive(false);
             Round[RoundCount].SetActive(true);

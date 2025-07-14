@@ -151,6 +151,10 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.flipY = FirstFlipY;
         HP = MaxHP;
         ctTime = FirstCtTime;
+        //Vector2 velocity = rb2d.velocity;
+        //velocity.x = 0f;
+        Debug.Log(move.x);
+        anim.SetBool("Move", move.x != 0);
     }
     public void AmmoCount()
     {

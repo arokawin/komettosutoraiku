@@ -9,6 +9,7 @@ public class BulletController : MonoBehaviour
 
     private Vector2 direction;
 
+
     private static readonly Vector2 SpriteDir = new Vector2(-1f, -1f).normalized;
 
     public void SetDirection(Vector2 dir)
@@ -17,7 +18,7 @@ public class BulletController : MonoBehaviour
 
         float angle = Vector2.SignedAngle(SpriteDir, direction);
 
-        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        transform.rotation = Quaternion.Euler(0f, 0f, angle + 45);
     }
 
     void Update()
@@ -30,7 +31,7 @@ public class BulletController : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
             Destroy(gameObject);
     }

@@ -53,18 +53,15 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Kometto input;
 
-
-    private float flipCooldown = 0.5f; // 反転してから再反転までの時間
-    private float lastFlipTime = -999f;
-
-    private int HantenIndex = 0; // 現在の反転地点インデックス
-    private int ModoruIndex = 0; // 現在の戻る地点インデックス
     private Animator anim;
 
     private Vector3 FirstPos;
+    private Vector3 FirstScale;
     private bool FirstFlipX;
     private bool FirstFlipY;
     private float FirstGravity;
+    private Vector3 FirstGra;
+    private bool FirstFlipped;
     private float MaxHP = 1;
     private float FirstCtTime = 0f;
 
@@ -90,6 +87,9 @@ public class PlayerController : MonoBehaviour
         FirstFlipX = spriteRenderer.flipX;
         FirstFlipY = spriteRenderer.flipY;
         FirstGravity = rb2d.gravityScale;
+        FirstGra = rb2d.velocity;
+        FirstScale = transform.localScale;
+        FirstFlipped = isFlipped;
     }
 
     private void OnDestroy()
@@ -104,8 +104,9 @@ public class PlayerController : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, GroundLayer);
 
-     // transform.position += new Vector3(move.x, 0f, 0f) * xSpeed * Time.deltaTime;
+        // transform.position += new Vector3(move.x, 0f, 0f) * xSpeed * Time.deltaTime;
 
+        
         anim.SetBool("Move", move.x != 0);
         if (move.x < 0)
         {
@@ -120,7 +121,6 @@ public class PlayerController : MonoBehaviour
 
         if (shootDirection.magnitude < 0.1f)
         {
-
             aimSpInstance.SetActive(false);
             return;
         }
@@ -140,26 +140,31 @@ public class PlayerController : MonoBehaviour
             aim.SetDirection(shootDirection);
         }
 
-
     }
 
     public void ResetPlayer()
     {
         transform.position = FirstPos;
+        transform.localScale = FirstScale;
         rb2d.gravityScale = FirstGravity;
+        rb2d.velocity = FirstGra;
         spriteRenderer.flipX = FirstFlipX;
         spriteRenderer.flipY = FirstFlipY;
         HP = MaxHP;
         ctTime = FirstCtTime;
+        ammo = 0;
+        isFlipped = FirstFlipped;
         //Vector2 velocity = rb2d.velocity;
         //velocity.x = 0f;
-        Debug.Log(move.x);
+        
+        move.x = 0;
         anim.SetBool("Move", move.x != 0);
         // 子オブジェクトの全削除
         foreach (Transform n in stars.transform)
         {
             GameObject.Destroy(n.gameObject);
         }
+        starList.Clear();
 
     }
     public void AmmoCount()
@@ -192,6 +197,7 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx)
     {
         if (ctx.started) return;
+        if (gameManager.GetComponent<GameManager>().GameEnd == true) return;
         if (ctx.performed)
         {
             move = ctx.ReadValue<Vector2>();
@@ -235,6 +241,7 @@ public class PlayerController : MonoBehaviour
         if (ctx.performed && isGrounded)
         {   
             if (gameManager.GetComponent<GameManager>().GameEnd == true) return;
+           
             rb2d.velocity = new Vector2(rb2d.velocity.x, isFlipped ? -jumpPower : jumpPower); //今の重力方向にジャンプ
             SoundManager.Instance.PlaySe(SEType.SE4);
         }
@@ -247,6 +254,8 @@ public class PlayerController : MonoBehaviour
             //SoundManager.Instance.PlayBgm(BGMType.BGM2);
             GameManager.Instance.SudLifeCount(PlInput.user.index);
             await GameManager.Instance.NextRound();
+            anim.SetBool("Move", move.x != 0);
+            Destroy(collider.gameObject);
         }
 
     }

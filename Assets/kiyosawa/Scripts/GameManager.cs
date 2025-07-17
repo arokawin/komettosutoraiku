@@ -27,8 +27,6 @@ public class GameManager : MonoBehaviour
    
 
     private int RoundCount = 0;
-    private int PlayerP1WinCount = 0;
-    private int PlayerP2WinCount = 0;
     private int[] LifeCounts = { 2, 2 };
     private bool gameEnd = false;
     private float currentCountDown;
@@ -186,6 +184,8 @@ public class GameManager : MonoBehaviour
 
         if (LifeNum == 0)
         {
+            SoundManager.Instance.StopBgm();
+            SoundManager.Instance.PlayBgm(BGMType.BGM2);
             for (int i = 0; PlayerControllers.Count > i; i++)
             {
                 PlayerControllers[i].ResetPlayer();
@@ -196,6 +196,8 @@ public class GameManager : MonoBehaviour
         }
         else if (LifeNum == 1)
         {
+            SoundManager.Instance.StopBgm();
+            SoundManager.Instance.PlayBgm(BGMType.BGM2);
             for (int i = 0; PlayerControllers.Count > i; i++)
             {
                 PlayerControllers[i].ResetPlayer();

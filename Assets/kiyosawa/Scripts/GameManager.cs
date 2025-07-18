@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
 
     [SerializeField] private GameObject WinnerPanel;
+    [SerializeField] private GameObject Winner1;
+    [SerializeField] private GameObject Winner2;
     [SerializeField] private GameObject WinP1;
     [SerializeField] private GameObject WinP2;
     [SerializeField] private TextMeshProUGUI CountText;
@@ -70,8 +72,10 @@ public class GameManager : MonoBehaviour
         SoundManager.Instance.PlayBgm(BGMType.BGM1);
 
         WinnerPanel.SetActive(false);
-        WinP2.SetActive(false);
+        Winner2.SetActive(false);
+        Winner1.SetActive(false);
         WinP1.SetActive(false);
+        WinP2.SetActive(false); 
 
         Time.timeScale = 1;
 
@@ -99,11 +103,11 @@ public class GameManager : MonoBehaviour
         //         WinnerPanel.SetActive(true);
         //         if (PlayerControllers[0].HP <= 0)
         //         {
-        //             WinP1.SetActive(true);
+        //             Winner1.SetActive(true);
         //         }
         //         else if (PlayerControllers[1].HP <= 0)
         //         {
-        //             WinP2.SetActive(true);
+        //             Winner2.SetActive(true);
         //         }
         //     }
 
@@ -155,7 +159,21 @@ public class GameManager : MonoBehaviour
         {
             gameEnd = true;
             currentCountDown -= Time.deltaTime;
-            CountText.text = Mathf.Ceil(currentCountDown).ToString();
+            switch(RoundCount)
+            {
+                case 0:
+                CountText.text = "Round1";//Mathf.Ceil(currentCountDown).ToString();
+                    break;
+
+                case 1:
+                    CountText.text = "Round2";
+                    break;
+
+                case 2:
+                    CountText.text = "Round3";
+                    break;
+            }
+            
         }
         else
         {
@@ -179,8 +197,25 @@ public class GameManager : MonoBehaviour
     {
         gameEnd = true;
         RoundCount++;
-        await fadeManager.FadeOut();
         int LifeNum = Array.IndexOf(LifeCounts, 0);
+        //
+        //if (PlayersList[0])
+        //{
+        //    Debug.Log("2");
+        //    WinP2.SetActive(true);
+        //}
+        //else
+        //{
+        //    Debug.Log("1");
+        //    WinP1.SetActive(true);
+        //}
+        //
+        //await Task.Delay(1000);
+
+        await fadeManager.FadeOut();
+
+        WinP1.SetActive(false);
+        WinP2.SetActive(false);
 
         if (LifeNum == 0)
         {
@@ -192,7 +227,7 @@ public class GameManager : MonoBehaviour
             }
             await fadeManager.FadeIn();
             WinnerPanel.SetActive(true);
-            WinP2.SetActive(true);
+            Winner2.SetActive(true);
         }
         else if (LifeNum == 1)
         {
@@ -204,7 +239,7 @@ public class GameManager : MonoBehaviour
             }
             await fadeManager.FadeIn();
             WinnerPanel.SetActive(true);
-            WinP1.SetActive(true);
+            Winner1.SetActive(true);
         }
         else
         {

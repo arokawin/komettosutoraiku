@@ -64,6 +64,8 @@ public class PlayerController : MonoBehaviour
     private bool FirstFlipped;
     private float MaxHP = 1;
     private float FirstCtTime = 0f;
+    [SerializeField] private GameObject WinP1;
+    [SerializeField] private GameObject WinP2;
 
     private PlayerInput PlInput;
 

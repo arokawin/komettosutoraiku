@@ -5688,12 +5688,24 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 3060651743380510798, guid: 6f56df138efb2294f9a94059ec3f1f53, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3579729640348391407, guid: 6f56df138efb2294f9a94059ec3f1f53, type: 3}
       propertyPath: m_Name
       value: CometDelete
       objectReference: {fileID: 0}
     - target: {fileID: 3579729640348391407, guid: 6f56df138efb2294f9a94059ec3f1f53, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987506362426735398, guid: 6f56df138efb2294f9a94059ec3f1f53, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109421869000173501, guid: 6f56df138efb2294f9a94059ec3f1f53, type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5838260264248604428, guid: 6f56df138efb2294f9a94059ec3f1f53, type: 3}
@@ -5748,6 +5760,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -17.61
       objectReference: {fileID: 0}
+    - target: {fileID: 9102922314090367199, guid: 6f56df138efb2294f9a94059ec3f1f53, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5768,7 +5784,7 @@ PrefabInstance:
     - target: {fileID: 1186152368134811535, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bf5dcd1bd7de4a54d810d2575f1f0ec2, type: 3}
+      objectReference: {fileID: 21300000, guid: d02f3e8ca4396044a92367182c9c88a6, type: 3}
     - target: {fileID: 1186152368134811535, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -5839,7 +5855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2174453114793339875, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3420893534127878091, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_Pivot.x
@@ -5988,7 +6004,7 @@ PrefabInstance:
     - target: {fileID: 5503227711823921371, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d02f3e8ca4396044a92367182c9c88a6, type: 3}
+      objectReference: {fileID: 21300000, guid: bf5dcd1bd7de4a54d810d2575f1f0ec2, type: 3}
     - target: {fileID: 5503227711823921371, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -6139,7 +6155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8258322056307210862, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -6223,7 +6239,7 @@ PrefabInstance:
     - target: {fileID: 8798895656344381639, guid: f9015180ead1bdb4a801310483e9d1e4, type: 3}
       propertyPath: _bullet
       value: 
-      objectReference: {fileID: 577429638088881880, guid: 0751464af7111154b805298e0753dfb7, type: 3}
+      objectReference: {fileID: 4279072456657617540, guid: a600b2c87c735e14d99f2805f145000f, type: 3}
     - target: {fileID: 8798895656344381639, guid: f9015180ead1bdb4a801310483e9d1e4, type: 3}
       propertyPath: ammoText
       value: 
@@ -6473,7 +6489,7 @@ PrefabInstance:
     - target: {fileID: 7401567567991097134, guid: 8b9c613c970bd0e4f8c954dba05b76cb, type: 3}
       propertyPath: _bullet
       value: 
-      objectReference: {fileID: 4471088441177876706, guid: bd99b43ecf7443d49bb4b0051205edb4, type: 3}
+      objectReference: {fileID: 4279072456657617540, guid: d1fbec71ac6fb9949bb1973efcd8e0fb, type: 3}
     - target: {fileID: 7401567567991097134, guid: 8b9c613c970bd0e4f8c954dba05b76cb, type: 3}
       propertyPath: ammoText
       value: 

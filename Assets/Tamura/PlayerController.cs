@@ -255,7 +255,7 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.SudLifeCount(PlInput.user.index);
             await GameManager.Instance.NextRound();
             anim.SetBool("Move", move.x != 0);
-            Destroy(collider.gameObject);
+            //Destroy(collider.gameObject);
         }
 
     }

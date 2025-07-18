@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1182068016319961515}
   - component: {fileID: 3419446701951449639}
   - component: {fileID: 3697904210294164278}
+  - component: {fileID: 6413827104323196146}
   m_Layer: 7
   m_Name: Meteo_Ani
   m_TagString: inseki
@@ -170,3 +171,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6413827104323196146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2786225485521068245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff8bffc6ec92534bb9f1731f87c2347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

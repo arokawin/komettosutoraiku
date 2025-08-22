@@ -1140,6 +1140,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5652952403229792114, guid: ff388efee9c56b54692f8640e892a80d, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5652952403229792114, guid: ff388efee9c56b54692f8640e892a80d, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5652952403229792114, guid: ff388efee9c56b54692f8640e892a80d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 80b6d6fa0fb90664bb8f603b11125703, type: 3}
     - target: {fileID: 7506239220555327180, guid: ff388efee9c56b54692f8640e892a80d, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -5516,7 +5528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1990326021
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5656,7 +5668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2057529011
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6317,7 +6329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8258322056307210862, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -6404,6 +6416,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8798895656344381639, guid: f9015180ead1bdb4a801310483e9d1e4, type: 3}
+      propertyPath: loopCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798895656344381639, guid: f9015180ead1bdb4a801310483e9d1e4, type: 3}
       propertyPath: aimSpPrefab
       value: 
       objectReference: {fileID: 8966170425743235828, guid: 40339d6cb775e1c4b80f8deb845efb1d, type: 3}
@@ -6411,6 +6427,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 559870234}
+    - target: {fileID: 8798895656344381639, guid: f9015180ead1bdb4a801310483e9d1e4, type: 3}
+      propertyPath: flashInterval
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 8798895656344381639, guid: f9015180ead1bdb4a801310483e9d1e4, type: 3}
       propertyPath: gaugeController
       value: 
@@ -6658,6 +6678,10 @@ PrefabInstance:
       value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7401567567991097134, guid: 8b9c613c970bd0e4f8c954dba05b76cb, type: 3}
+      propertyPath: loopCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401567567991097134, guid: 8b9c613c970bd0e4f8c954dba05b76cb, type: 3}
       propertyPath: aimSpPrefab
       value: 
       objectReference: {fileID: 8966170425743235828, guid: 40339d6cb775e1c4b80f8deb845efb1d, type: 3}
@@ -6665,6 +6689,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 559870234}
+    - target: {fileID: 7401567567991097134, guid: 8b9c613c970bd0e4f8c954dba05b76cb, type: 3}
+      propertyPath: flashInterval
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 7401567567991097134, guid: 8b9c613c970bd0e4f8c954dba05b76cb, type: 3}
       propertyPath: gaugeController
       value: 

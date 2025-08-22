@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        // ƒJƒEƒ“ƒgƒ_ƒEƒ“
+        // ï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½_ï¿½Eï¿½ï¿½
         currentCountDown = CountDown;
         isCountingDown = true;
 
@@ -90,14 +90,14 @@ public class GameManager : MonoBehaviour
     {
         // // var Sum = PlayerControllers[0].WinCount + PlayerControllers[1].WinCount;
 
-        // // ƒŠƒUƒ‹ƒg•\‹L
+        // // ï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½gï¿½\ï¿½L
         //// if (PlayerControllers[0].HP <= 0 || PlayerControllers[1].HP <= 0)
         // {
         //     GameEnd  = true;
 
         //     StartCoroutine(sceneGame.GetComponent<ChangeSceneGame>().FadeIn());
 
-        //     // Winner•\¦
+        //     // Winnerï¿½\ï¿½ï¿½
         //     if (PlayerControllers[0].WinCount >= 2 || PlayerControllers[1].WinCount >= 2)
         //     {
         //         WinnerPanel.SetActive(true);
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
         //         }
         //     }
 
-        //     // ƒvƒŒƒCİ’è‚ÌƒŠƒZƒbƒg
+        //     // ï¿½vï¿½ï¿½ï¿½Cï¿½İ’ï¿½Ìƒï¿½ï¿½Zï¿½bï¿½g
         //     if (PlayerControllers[0].WinCount < 2 || PlayerControllers[1].WinCount < 2)
         //     {
         //         for (int i = 0; PlayerControllers.Count > i; i++)
@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviour
 
     public async void StartCountDown()
     {
-        // ƒJƒEƒ“ƒgƒ_ƒEƒ“
+        // ï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½_ï¿½Eï¿½ï¿½
         if (!isCountingDown) return;
 
         if (currentCountDown > 0)
@@ -192,7 +192,7 @@ public class GameManager : MonoBehaviour
         //await NextRound();
     }
 
-    // Winner•\¦
+    // Winnerï¿½\ï¿½ï¿½
     public async Task NextRound()
     {
         gameEnd = true;

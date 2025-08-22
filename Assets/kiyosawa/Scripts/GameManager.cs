@@ -202,12 +202,12 @@ public class GameManager : MonoBehaviour
         if (LifeNum == 0)
         {
             WinP2.SetActive(true);
-            RoundStar1[0].sprite = Win;
+            RoundStar2[0].sprite = Win;
         }
         else if (LifeNum == 1)
         {
             WinP1.SetActive(true);
-            RoundStar2[0].sprite = Win;
+            RoundStar1[0].sprite = Win;
         }
     }
 
@@ -226,12 +226,12 @@ public class GameManager : MonoBehaviour
         if (LifeNum == 0)
         {
             WinP2.SetActive(true);
-            RoundStar1[0].sprite = Win;
+            RoundStar2[0].sprite = Win;
         }
         else if (LifeNum == 1)
         {
             WinP1.SetActive(true);
-            RoundStar2[0].sprite = Win;
+            RoundStar1[0].sprite = Win;
         }
 
         //

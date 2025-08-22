@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.UI;
+using System.Threading.Tasks;
 
 public class PlayerController : MonoBehaviour
 {
@@ -69,11 +70,18 @@ public class PlayerController : MonoBehaviour
 
     private PlayerInput PlInput;
 
+    [SerializeField] float flashInterval;
+    //点滅させるときのループカウント
+    [SerializeField] int loopCount;
+    //点滅させるためのSpriteRenderer
+    SpriteRenderer sp;
+    bool isHit;
     #endregion
 
     public float HP;
     void Start()
     {
+
         int maxLength = Mathf.Max(hanten.Length, modoru.Length);
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -92,6 +100,8 @@ public class PlayerController : MonoBehaviour
         FirstGra = rb2d.velocity;
         FirstScale = transform.localScale;
         FirstFlipped = isFlipped;
+
+
     }
 
     private void OnDestroy()
@@ -102,7 +112,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.GetComponent<GameManager>().GameEnd == true) return;
+        if (gameManager.GetComponent<GameManager>().GameEnd == true)
+        {
+            aimSpInstance.SetActive(false);
+            rb2d.velocity = Vector2.zero;
+            anim.SetBool("Move", false);
+            //anim.SetBool("damage", false);
+            return;
+        }
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, GroundLayer);
 
@@ -158,8 +175,9 @@ public class PlayerController : MonoBehaviour
         isFlipped = FirstFlipped;
         //Vector2 velocity = rb2d.velocity;
         //velocity.x = 0f;
-        
         move.x = 0;
+        isHit = false;
+        anim.SetBool("damage", false);
         anim.SetBool("Move", move.x != 0);
         // 子オブジェクトの全削除
         foreach (Transform n in stars.transform)
@@ -207,7 +225,6 @@ public class PlayerController : MonoBehaviour
         if (ctx.canceled)
         {
             move = Vector2.zero;
-
         }
 
     }
@@ -254,12 +271,33 @@ public class PlayerController : MonoBehaviour
         if (collider.gameObject.CompareTag("inseki")|| collider.gameObject.CompareTag("bullet1")|| collider.gameObject.CompareTag("bullet2"))
         {
             //SoundManager.Instance.PlayBgm(BGMType.BGM2);
+            anim.SetBool("Move", false);
+            anim.SetBool("damage",true);
+            StartCoroutine(_hit());
             GameManager.Instance.SudLifeCount(PlInput.user.index);
             await GameManager.Instance.NextRound();
-            anim.SetBool("Move", move.x != 0);
             //Destroy(collider.gameObject);
         }
 
+    }
+    IEnumerator _hit()
+    {
+        //当たりフラグをtrueに変更（当たっている状態）
+        isHit = true;
+
+        //点滅ループ開始
+        for (int i = 0; i < loopCount; i++)
+        {
+            //flashInterval待ってから
+            yield return new WaitForSeconds(flashInterval);
+            //spriteRendererをオフ
+            spriteRenderer.enabled = false;
+
+            //flashInterval待ってから
+            yield return new WaitForSeconds(flashInterval);
+            //spriteRendererをオン
+            spriteRenderer.enabled = true;
+        }
     }
 
     #region いんぷっとまねーじゃー

@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class MeteoriteDestroy : MonoBehaviour
 {
-    public void OnCollisionEnter2D(Collision2D collision)
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private GameObject randomuUp;
+    private void OnBecameInvisible()
     {
         Destroy(gameObject);
     }
+
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        Destroy(gameObject);
+    }
+
 }

@@ -15,7 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<GameObject> Round = new List<GameObject>();
     [SerializeField] private List<Rigidbody2D> PlayerRigidbody2D = new List<Rigidbody2D>();
     [SerializeField] private List<Animator> PlayerAnimations = new List<Animator>();
-
+    [SerializeField] private List<Image> RoundStar1 = new List<Image>();
+    [SerializeField] private List<Image> RoundStar2 = new List<Image>();
+    [SerializeField] private List<Vector3> PlayersStPosList = new List<Vector3>();
 
     [SerializeField] private GameObject WinnerPanel;
     [SerializeField] private GameObject Winner1;
@@ -25,8 +27,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI CountText;
     [SerializeField] private float CountDown = 3.0f;
     [SerializeField] private ChangeSceneGame sceneGame;
-    [SerializeField] private List<Vector3> PlayersStPosList = new List<Vector3>();
-   
+    [SerializeField] private Sprite Win;
+    
 
     private int RoundCount = 0;
     private int[] LifeCounts = { 2, 2 };
@@ -162,7 +164,7 @@ public class GameManager : MonoBehaviour
             switch(RoundCount)
             {
                 case 0:
-                CountText.text = "Round1";//Mathf.Ceil(currentCountDown).ToString();
+                CountText.text = "Round1";
                     break;
 
                 case 1:
@@ -189,7 +191,29 @@ public class GameManager : MonoBehaviour
     public void SudLifeCount(int playerNum)
     {
         LifeCounts[playerNum]--;
+        StarRound();
         //await NextRound();
+    }
+
+    public void StarRound()
+    {
+        int LifeNum = Array.IndexOf(LifeCounts, 1);
+
+        if (LifeNum == 0)
+        {
+            WinP2.SetActive(true);
+            RoundStar1[0].sprite = Win;
+        }
+        else if (LifeNum == 1)
+        {
+            WinP1.SetActive(true);
+            RoundStar2[0].sprite = Win;
+        }
+    }
+
+    private void WinPlayer()
+    {
+
     }
 
     // Winner•\Ž¦
@@ -198,6 +222,18 @@ public class GameManager : MonoBehaviour
         gameEnd = true;
         RoundCount++;
         int LifeNum = Array.IndexOf(LifeCounts, 0);
+
+        if (LifeNum == 0)
+        {
+            WinP2.SetActive(true);
+            RoundStar1[0].sprite = Win;
+        }
+        else if (LifeNum == 1)
+        {
+            WinP1.SetActive(true);
+            RoundStar2[0].sprite = Win;
+        }
+
         //
         //if (PlayersList[0])
         //{
@@ -217,6 +253,7 @@ public class GameManager : MonoBehaviour
         WinP1.SetActive(false);
         WinP2.SetActive(false);
 
+
         if (LifeNum == 0)
         {
             SoundManager.Instance.StopBgm();
@@ -225,6 +262,7 @@ public class GameManager : MonoBehaviour
             {
                 PlayerControllers[i].ResetPlayer();
             }
+            RoundStar1[1].sprite = Win;
             await fadeManager.FadeIn();
             WinnerPanel.SetActive(true);
             Winner2.SetActive(true);
@@ -237,6 +275,7 @@ public class GameManager : MonoBehaviour
             {
                 PlayerControllers[i].ResetPlayer();
             }
+            RoundStar2[1].sprite = Win;
             await fadeManager.FadeIn();
             WinnerPanel.SetActive(true);
             Winner1.SetActive(true);

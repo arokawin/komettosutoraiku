@@ -63,11 +63,14 @@
     <Compile Include="Assets\kiyosawa\Scripts\MeteoriteDestroy.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Tamura\FollowTransform.cs" />
+    <Compile Include="Assets\kiyosawa\PlayerAssign.cs" />
     <Compile Include="Assets\Tamura\PlayerJoinManager.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\Random.cs" />
     <Compile Include="Assets\InputSystem\Kometto.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\changeSceneGame.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\ResultUiController.cs" />
+    <Compile Include="Assets\kiyosawa\Scripts\Debug.cs" />
+    <Compile Include="Assets\kiyosawa\DeviceManager.cs" />
     <Compile Include="Assets\Tamura\BulletController.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\GameManager.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\RandomUp.cs" />

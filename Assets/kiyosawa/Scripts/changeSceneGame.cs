@@ -17,6 +17,7 @@ public class ChangeSceneGame : MonoBehaviour
 
     public async void Restart_button()
     {
+        GetComponent<Button>().interactable = false;
         SceneManager.sceneLoaded += OnSceneLoaded;
         SoundManager.Instance.PlaySe(SEType.SE1);
         // 500ƒ~ƒŠ•b‘Ò‚Á‚Ä‚©‚çˆ—‚ğ‘±‚¯‚é
@@ -26,6 +27,7 @@ public class ChangeSceneGame : MonoBehaviour
     }
     public async void ChangeTitle_button()
     {
+        GetComponent<Button>().interactable = false;
         SceneManager.sceneLoaded += OnSceneLoaded;
         SoundManager.Instance.PlaySe(SEType.SE1);
         // 500ƒ~ƒŠ•b‘Ò‚Á‚Ä‚©‚çˆ—‚ğ‘±‚¯‚é
@@ -37,6 +39,7 @@ public class ChangeSceneGame : MonoBehaviour
 
     public async void ChangeGame()
     {
+        GetComponent<Button>().interactable = false;
         SceneManager.sceneLoaded += OnSceneLoaded;
         SoundManager.Instance.PlaySe(SEType.SE1);
         await fadePanel.FadeOut();
@@ -51,6 +54,7 @@ public class ChangeSceneGame : MonoBehaviour
 
     public async void ReloadScene()
     {
+        GetComponent<Button>().interactable = false;
         SceneManager.sceneLoaded += OnSceneLoaded;
         SoundManager.Instance.PlaySe(SEType.SE1);
         // 500ƒ~ƒŠ•b‘Ò‚Á‚Ä‚©‚çˆ—‚ğ‘±‚¯‚é

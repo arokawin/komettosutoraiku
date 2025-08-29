@@ -2,7 +2,6 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections;
 using System.Collections.Generic;
 using System;
 
@@ -27,7 +26,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI CountText;
     [SerializeField] private float CountDown = 3.0f;
     [SerializeField] private ChangeSceneGame sceneGame;
-    [SerializeField] private Sprite Win;
+    [SerializeField] private Sprite Win1;
+    [SerializeField] private Sprite Win2;
     
 
     private int RoundCount = 0;
@@ -192,28 +192,80 @@ public class GameManager : MonoBehaviour
     {
         LifeCounts[playerNum]--;
         StarRound();
-        //await NextRound();
     }
 
     public void StarRound()
     {
-        int LifeNum = Array.IndexOf(LifeCounts, 1);
+        int LifeNum = LifeCounts [0];
 
-        if (LifeNum == 0)
+        int LifeNum2 = LifeCounts[1];
+
+        int RoundNum = RoundCount;
+
+        if (RoundNum == 0)
         {
-            WinP2.SetActive(true);
-            RoundStar2[0].sprite = Win;
+            if (LifeNum == 2)
+            {
+                WinP1.SetActive(true);
+                RoundStar1[0].sprite = Win1;
+            }
+            else
+            {
+                WinP2.SetActive(true);
+                RoundStar2[0].sprite = Win2;
+            }
         }
-        else if (LifeNum == 1)
+
+        if (RoundNum == 1)
         {
-            WinP1.SetActive(true);
-            RoundStar1[0].sprite = Win;
+            if (LifeNum == 2)
+            {
+                WinP1.SetActive(true);
+                RoundStar1[1].sprite = Win1;
+            }
+            //else if (LifeNum == 1)
+            //{
+            //    WinP1.SetActive(true);
+            //    RoundStar1[1].sprite = Win;
+            //}
+            else if (LifeNum2 == 2)
+            {
+                WinP2.SetActive(true);
+                RoundStar2[1].sprite = Win2;
+            }
+            else
+            {
+                WinP2.SetActive(true);
+                RoundStar2[1].sprite = Win2;
+            }
         }
-    }
 
-    private void WinPlayer()
-    {
+        if (RoundNum == 2)
+        {
+            if (LifeNum == 1)
+            {
+                WinP1.SetActive(true);
+                RoundStar1[1].sprite = Win1;
+            }
+            else
+            {
+                WinP2.SetActive(true);
+                RoundStar2[1].sprite = Win2;
+            }
+        }
 
+        //    LifeNum = Array.IndexOf(LifeCounts, 0);
+
+        //    if (LifeNum == 0)
+        //    {
+        //        WinP2.SetActive(true);
+        //        RoundStar2[1].sprite = Win;
+        //    }
+        //    else if (LifeNum == 1)
+        //    {
+        //        WinP1.SetActive(true);
+        //        RoundStar1[1].sprite = Win;
+        //    }
     }
 
     // Winner•\Ž¦
@@ -223,16 +275,16 @@ public class GameManager : MonoBehaviour
         RoundCount++;
         int LifeNum = Array.IndexOf(LifeCounts, 0);
 
-        if (LifeNum == 0)
-        {
-            WinP2.SetActive(true);
-            RoundStar2[0].sprite = Win;
-        }
-        else if (LifeNum == 1)
-        {
-            WinP1.SetActive(true);
-            RoundStar1[0].sprite = Win;
-        }
+        //if (LifeNum == 0)
+        //{
+        //    WinP2.SetActive(true);
+        //    RoundStar2[0].sprite = Win;
+        //}
+        //else if (LifeNum == 1)
+        //{
+        //    WinP1.SetActive(true);
+        //    RoundStar1[0].sprite = Win;
+        //}
 
         //
         //if (PlayersList[0])
@@ -262,7 +314,7 @@ public class GameManager : MonoBehaviour
             {
                 PlayerControllers[i].ResetPlayer();
             }
-            RoundStar1[1].sprite = Win;
+            //RoundStar1[1].sprite = Win;
             await fadeManager.FadeIn();
             WinnerPanel.SetActive(true);
             Winner2.SetActive(true);
@@ -275,7 +327,7 @@ public class GameManager : MonoBehaviour
             {
                 PlayerControllers[i].ResetPlayer();
             }
-            RoundStar2[1].sprite = Win;
+            //RoundStar2[1].sprite = Win;
             await fadeManager.FadeIn();
             WinnerPanel.SetActive(true);
             Winner1.SetActive(true);
@@ -287,16 +339,6 @@ public class GameManager : MonoBehaviour
                 GaugesList[i].UpdateGauge(0, 5);
                 PlayerControllers[i].ResetPlayer();
             }
-            //Player1.HP = 1;
-            //Player2.HP = 1;
-
-            //Player1.transform.position = Player1StPos;
-            //Player2.transform.position = Player2StPos;
-
-            //gauge1.UpdateGauge(0, 5);
-            //Player1.ctTime = 0;
-            //gauge2.UpdateGauge(0, 5);
-            //Player2.ctTime = 0;
 
             currentCountDown = CountDown;
             isCountingDown = true;

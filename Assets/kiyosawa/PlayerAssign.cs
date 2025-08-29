@@ -29,7 +29,7 @@ public class PlayerAssign : MonoBehaviour
     void Assign()
     {
         //
-        foreach (int key in DeviceManager.Instance.Gamepads.Keys)
+        //foreach (int key in DeviceManager.Instance.Gamepads.Keys)
         {
             // Žæ“¾‚µ‚½ Input ‚ð—v‘f‚É’Ç‰Á
           //  _playerInputs.Add(player.GetComponentInChildren<PlayerInput>());

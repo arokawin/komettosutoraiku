@@ -28,7 +28,7 @@ public class    DeviceManager : MonoBehaviour
 
     public string[] JoystickNames = new string[0];
 
-    private int CurrentConnectionCount = 0;
+    //private int CurrentConnectionCount = 0;
 
     // Start is called before the first frame update
     void Start()

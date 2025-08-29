@@ -4,25 +4,39 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 
 public class GameManager : MonoBehaviour
 {
+    // Inspectorに表示するため
+    //クラスを Serializable 化する
+    [System.Serializable]
+    private class RoundStarPack
+    {
+        public List<Image> RoundStar;
+    }
+
     [SerializeField] private List<GameObject> PlayersList = new List<GameObject>();
     [SerializeField] private List<PlayerController> PlayerControllers = new List<PlayerController>();
     public List<GaugeController> GaugesList = new List<GaugeController>();
     [SerializeField] private List<GameObject> Round = new List<GameObject>();
     [SerializeField] private List<Rigidbody2D> PlayerRigidbody2D = new List<Rigidbody2D>();
     [SerializeField] private List<Animator> PlayerAnimations = new List<Animator>();
-    [SerializeField] private List<Image> RoundStar1 = new List<Image>();
-    [SerializeField] private List<Image> RoundStar2 = new List<Image>();
+    [SerializeField] private List<RoundStarPack> RoundStars = new List<RoundStarPack>();
+    //[SerializeField] private List<Image> RoundStar1 = new List<Image>();
+    //[SerializeField] private List<Image> RoundStar2 = new List<Image>();
     [SerializeField] private List<Vector3> PlayersStPosList = new List<Vector3>();
 
     [SerializeField] private GameObject WinnerPanel;
-    [SerializeField] private GameObject Winner1;
-    [SerializeField] private GameObject Winner2;
-    [SerializeField] private GameObject WinP1;
-    [SerializeField] private GameObject WinP2;
+    // コメント化した GameObject をリスト化
+    [SerializeField] private List<GameObject> WinnerLogos = new List<GameObject>();
+    //[SerializeField] private GameObject Winner1;
+    //[SerializeField] private GameObject Winner2;
+    // コメント化した GameObject をリスト化
+    [SerializeField] private List<GameObject> WinLogos = new List<GameObject>();
+    //[SerializeField] private GameObject WinP1;
+    //[SerializeField] private GameObject WinP2;
     [SerializeField] private Image CountImage;
     [SerializeField] private Sprite Round1Sp;
     [SerializeField] private Sprite Round2Sp;
@@ -30,15 +44,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite StartSp;
     [SerializeField] private float CountDown = 3.0f;
     [SerializeField] private ChangeSceneGame sceneGame;
-    [SerializeField] private Sprite Win1;
-    [SerializeField] private Sprite Win2;
+    [SerializeField] private List<Sprite> Wins = new List<Sprite>();
 
 
     private int RoundCount = 0;
     private int[] LifeCounts = { 2, 2 };
     private bool gameEnd = false;
     private float currentCountDown;
-    private bool isCountingDown = false;
+    public bool isCountingDown = false;
     public bool GameEnd => gameEnd;
     private static GameManager instance;
 
@@ -62,6 +75,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 各プレイヤーの取得
         for (int i = 0; PlayersList.Count > i; i++)
         {
             PlayerControllers.Add(PlayersList[i].GetComponent<PlayerController>());
@@ -78,10 +92,14 @@ public class GameManager : MonoBehaviour
         SoundManager.Instance.PlayBgm(BGMType.BGM1);
 
         WinnerPanel.SetActive(false);
-        Winner2.SetActive(false);
-        Winner1.SetActive(false);
-        WinP1.SetActive(false);
-        WinP2.SetActive(false);
+
+        // リスト化した GameObject をすべて非表示
+        WinnerLogos.ForEach(logo => logo.SetActive(false));
+        WinLogos.ForEach(logo => logo.SetActive(false));
+        //Winner2.SetActive(false);
+        //Winner1.SetActive(false);
+        //WinP1.SetActive(false);
+        //WinP2.SetActive(false);
 
         Time.timeScale = 1;
 
@@ -91,71 +109,16 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // // var Sum = PlayerControllers[0].WinCount + PlayerControllers[1].WinCount;
-
-        // // リザルト表記
-        //// if (PlayerControllers[0].HP <= 0 || PlayerControllers[1].HP <= 0)
-        // {
-        //     GameEnd  = true;
-
-        //     StartCoroutine(sceneGame.GetComponent<ChangeSceneGame>().FadeIn());
-
-        //     // Winner表示
-        //     if (PlayerControllers[0].WinCount >= 2 || PlayerControllers[1].WinCount >= 2)
-        //     {
-        //         WinnerPanel.SetActive(true);
-        //         if (PlayerControllers[0].HP <= 0)
-        //         {
-        //             Winner1.SetActive(true);
-        //         }
-        //         else if (PlayerControllers[1].HP <= 0)
-        //         {
-        //             Winner2.SetActive(true);
-        //         }
-        //     }
-
-        //     // プレイ設定のリセット
-        //     if (PlayerControllers[0].WinCount < 2 || PlayerControllers[1].WinCount < 2)
-        //     {
-        //         for (int i = 0; PlayerControllers.Count > i; i++)
-        //         {
-        //             PlayerControllers[i].HP = 1;
-        //             PlayersList[i].transform.position = PlayersStPosList[i];
-        //             GaugesList[i].UpdateGauge(0, 5);
-        //             PlayerControllers[i].ctTime = 0;
-        //         }
-        //         //Player1.HP = 1;
-        //         //Player2.HP = 1;
-
-        //         //Player1.transform.position = Player1StPos;
-        //         //Player2.transform.position = Player2StPos;
-
-        //         //gauge1.UpdateGauge(0, 5);
-        //         //Player1.ctTime = 0;
-        //         //gauge2.UpdateGauge(0, 5);
-        //         //Player2.ctTime = 0;
-
-        //         currentCountDown = CountDown;
-        //         isCountingDown = true;
-
-        //         CountText.gameObject.SetActive(isCountingDown);
-        //         CountText.gameObject.SetActive(true);
-
-        //         //Round[Sum - 1].SetActive(false);
-        //         //Round[Sum].SetActive(true);
-
-        //         StartCoroutine(sceneGame.FadeOut());
-        //     }
-
         StartCountDown();
-
     }
 
 
 
+    /// <summary>
+    /// スタートのカウントダウン
+    /// </summary>
     public async void StartCountDown()
     {
         // カウントダウン
@@ -190,15 +153,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// 勝敗の処理
+    /// </summary>
+    /// <param name="playerNum">敗者のプレイヤー</param>
     public void SudLifeCount(int playerNum)
     {
+        if (gameEnd) return;
         LifeCounts[playerNum]--;
-        StarRound();
+        // 勝者の番号を playerNum に入れる(1 - playerNum で敗者の番号から勝者の番号に変更)
+        StarRound(1 - playerNum, 1 - LifeCounts[playerNum]);
     }
 
-    public void StarRound()
+    /// <summary>
+    /// ラウンドの勝者の表示
+    /// </summary>
+    /// <param name="winnerIndex">勝者プレイヤー</param>
+    /// <param name="setStarIndex">ラウンド取得の表示</param>
+    public void StarRound(int winnerIndex, int setStarIndex)
     {
+        Debug.Log(winnerIndex);
+        // 勝者の表示
+        WinLogos[winnerIndex].SetActive(true);
+        // 勝者を取得しそのプレイヤーの RoundStar を表示
+        RoundStars[winnerIndex].RoundStar[setStarIndex].sprite = Wins[winnerIndex];
+        /*
         int LifeNum = LifeCounts[0];
 
         int LifeNum2 = LifeCounts[1];
@@ -255,7 +234,7 @@ public class GameManager : MonoBehaviour
                 WinP2.SetActive(true);
                 RoundStar2[1].sprite = Win2;
             }
-        }
+        } 
 
         //    LifeNum = Array.IndexOf(LifeCounts, 0);
 
@@ -268,15 +247,24 @@ public class GameManager : MonoBehaviour
         //    {
         //        WinP1.SetActive(true);
         //        RoundStar1[1].sprite = Win;
-        //    }
+        //    }　*/
+        
     }
 
-    // Winner表示
-    public async Task NextRound()
+    
+
+    /// <summary>
+    /// 次のラウンドのための処理
+    /// </summary>
+    /// <param name="winnerIndex">勝者プレイヤー</param>
+    /// <returns></returns>
+    public async Task NextRound(int winnerIndex)
     {
+        if (gameEnd) return;
         gameEnd = true;
         RoundCount++;
-        int LifeNum = Array.IndexOf(LifeCounts, 0);
+        /*
+        //int LifeNum = Array.IndexOf(LifeCounts, 0);
 
         //if (LifeNum == 0)
         //{
@@ -302,14 +290,18 @@ public class GameManager : MonoBehaviour
         //}
         //
         //await Task.Delay(1000);
+        */
 
         await fadeManager.FadeOut();
 
-        WinP1.SetActive(false);
-        WinP2.SetActive(false);
+        // リスト化した GameObject をすべて非表示
+        WinLogos.ForEach(logo => logo.SetActive(false));
+        //WinP1.SetActive(false);
+        //WinP2.SetActive(false);
 
-
-        if (LifeNum == 0)
+        // ()の中で一つでも条件を満たせていたら true
+        // Winner表示
+        if (LifeCounts.Any(life => life == 0))
         {
             SoundManager.Instance.StopBgm();
             SoundManager.Instance.PlayBgm(BGMType.BGM2);
@@ -317,12 +309,14 @@ public class GameManager : MonoBehaviour
             {
                 PlayerControllers[i].ResetPlayer();
             }
-            //RoundStar1[1].sprite = Win;
-            await fadeManager.FadeIn();
             WinnerPanel.SetActive(true);
-            Winner2.SetActive(true);
+            // ゲームの勝者を表示
+            WinnerLogos[winnerIndex].SetActive(true);
+            //Winner2.SetActive(true);
+            await fadeManager.FadeIn();
+
         }
-        else if (LifeNum == 1)
+       /* else if (LifeNum == 1)
         {
             SoundManager.Instance.StopBgm();
             SoundManager.Instance.PlayBgm(BGMType.BGM2);
@@ -334,7 +328,7 @@ public class GameManager : MonoBehaviour
             await fadeManager.FadeIn();
             WinnerPanel.SetActive(true);
             Winner1.SetActive(true);
-        }
+        }*/
         else
         {
             for (int i = 0; PlayerControllers.Count > i; i++)

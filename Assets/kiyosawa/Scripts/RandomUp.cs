@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 
 public class RandomUp : MonoBehaviour
@@ -15,11 +17,13 @@ public class RandomUp : MonoBehaviour
 
     
 
-    void Start()
+   public  void Start()
     {
         // åJÇËï‘Çµèàóù
         SoundManager.Instance.PlaySe(SEType.SE2);
-        InvokeRepeating("Randomkougeki_UpRight", 1f, 1f);
+        //await Task.Delay(5000);
+        InvokeRepeating("Randomkougeki_UpRight", 1f, 2f);
+        
     }
     private void Update()
     {
@@ -33,8 +37,15 @@ public class RandomUp : MonoBehaviour
         }
     }
 
-    void Randomkougeki_UpRight()
+   
+
+
+    async Task Randomkougeki_UpRight()
     {
+        if (GameManager.Instance.isCountingDown == true)
+        {
+            await Task.Delay(5000);
+        }
         if (GameManager.Instance.GameEnd == true) return;
         var UpDown = Random.Range(0, 2);
         switch (UpDown)

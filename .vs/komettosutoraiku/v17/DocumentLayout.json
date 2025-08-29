@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|c:\\users\\kiyo\\documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|c:\\users\\kiyo\\documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\randomup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\randomup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|c:\\users\\kiyo\\documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\random.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\random.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|c:\\users\\kiyo\\documents\\komettosutoraiku\\assets\\kiyosawa\\playerassign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\playerassign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,11 +30,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RandomUp.cs",
+              "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\RandomUp.cs",
+              "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\RandomUp.cs",
+              "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\RandomUp.cs",
+              "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\RandomUp.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T04:10:19.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Random.cs",
+              "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\Random.cs",
+              "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\Random.cs",
+              "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\Random.cs",
+              "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\Random.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T04:10:13.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\GameManager.cs",
+              "ViewState": "AgIAACsBAAAAAAAAAAAAwPwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T00:35:51.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PlayerAssign.cs",
               "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\PlayerAssign.cs",
               "RelativeDocumentMoniker": "Assets\\kiyosawa\\PlayerAssign.cs",
@@ -35,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "DeviceManager.cs",
               "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\DeviceManager.cs",
               "RelativeDocumentMoniker": "Assets\\kiyosawa\\DeviceManager.cs",
@@ -43,8 +94,7 @@
               "RelativeToolTip": "Assets\\kiyosawa\\DeviceManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T09:22:05.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T09:22:05.742Z"
             }
           ]
         }

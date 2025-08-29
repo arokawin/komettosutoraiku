@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> PlayersList = new List<GameObject>();
     [SerializeField] private List<PlayerController> PlayerControllers = new List<PlayerController>();
-                     public  List<GaugeController> GaugesList = new List<GaugeController>();
+    public List<GaugeController> GaugesList = new List<GaugeController>();
     [SerializeField] private List<GameObject> Round = new List<GameObject>();
     [SerializeField] private List<Rigidbody2D> PlayerRigidbody2D = new List<Rigidbody2D>();
     [SerializeField] private List<Animator> PlayerAnimations = new List<Animator>();
@@ -23,12 +23,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject Winner2;
     [SerializeField] private GameObject WinP1;
     [SerializeField] private GameObject WinP2;
-    [SerializeField] private TextMeshProUGUI CountText;
+    [SerializeField] private Image CountImage;
+    [SerializeField] private Sprite Round1Sp;
+    [SerializeField] private Sprite Round2Sp;
+    [SerializeField] private Sprite Round3Sp;
+    [SerializeField] private Sprite StartSp;
     [SerializeField] private float CountDown = 3.0f;
     [SerializeField] private ChangeSceneGame sceneGame;
     [SerializeField] private Sprite Win1;
     [SerializeField] private Sprite Win2;
-    
+
 
     private int RoundCount = 0;
     private int[] LifeCounts = { 2, 2 };
@@ -53,10 +57,10 @@ public class GameManager : MonoBehaviour
             return instance;
         }
     }
-   
+
 
     // Start is called before the first frame update
-     void Start()
+    void Start()
     {
         for (int i = 0; PlayersList.Count > i; i++)
         {
@@ -77,18 +81,18 @@ public class GameManager : MonoBehaviour
         Winner2.SetActive(false);
         Winner1.SetActive(false);
         WinP1.SetActive(false);
-        WinP2.SetActive(false); 
+        WinP2.SetActive(false);
 
         Time.timeScale = 1;
 
         Round[0].SetActive(true);
 
-        
+
 
     }
 
     // Update is called once per frame
-     void Update()
+    void Update()
     {
         // // var Sum = PlayerControllers[0].WinCount + PlayerControllers[1].WinCount;
 
@@ -161,28 +165,27 @@ public class GameManager : MonoBehaviour
         {
             gameEnd = true;
             currentCountDown -= Time.deltaTime;
-            switch(RoundCount)
+            switch (RoundCount)
             {
                 case 0:
-                CountText.text = "Round1";
+                    CountImage.sprite = Round1Sp;
                     break;
-
                 case 1:
-                    CountText.text = "Round2";
+                    CountImage.sprite = Round2Sp;
                     break;
-
                 case 2:
-                    CountText.text = "Round3";
+                    CountImage.sprite = Round3Sp;
                     break;
             }
-            
+            CountImage.gameObject.SetActive(true);
+
         }
         else
         {
-            CountText.text = "Start";
+            CountImage.sprite = StartSp;
             gameEnd = false;
             await Task.Delay(1000);
-            CountText.gameObject.SetActive(false);
+            CountImage.gameObject.SetActive(false);
             isCountingDown = false;
         }
     }
@@ -196,7 +199,7 @@ public class GameManager : MonoBehaviour
 
     public void StarRound()
     {
-        int LifeNum = LifeCounts [0];
+        int LifeNum = LifeCounts[0];
 
         int LifeNum2 = LifeCounts[1];
 
@@ -343,10 +346,10 @@ public class GameManager : MonoBehaviour
             currentCountDown = CountDown;
             isCountingDown = true;
 
-            CountText.gameObject.SetActive(isCountingDown);
-            CountText.gameObject.SetActive(true);
+            CountImage.gameObject.SetActive(isCountingDown);
+            CountImage.gameObject.SetActive(true);
 
-            Round[RoundCount -1].SetActive(false);
+            Round[RoundCount - 1].SetActive(false);
             Round[RoundCount].SetActive(true);
 
             await fadeManager.FadeIn();

@@ -275,8 +275,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("damage",true);
             StartCoroutine(_hit());
             GameManager.Instance.SudLifeCount(PlInput.user.index);
-            await Task.Delay(500);
-            await GameManager.Instance.NextRound(1 - PlInput.user.index);
+            await GameManager.Instance.NextRound(PlInput.user.index);
             //Destroy(collider.gameObject);
         }
 

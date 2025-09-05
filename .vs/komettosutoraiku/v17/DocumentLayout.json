@@ -3,19 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|c:\\users\\kiyo\\documents\\komettosutoraiku\\assets\\tamura\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\tamura\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|c:\\users\\kiyo\\documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|c:\\users\\kiyo\\documents\\komettosutoraiku\\assets\\tamura\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\tamura\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\randomup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\randomup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|c:\\users\\kiyo\\documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -46,18 +46,17 @@
               "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\SoundManager.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAA9wCgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-29T09:06:03.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-29T09:06:03.541Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\Tamura\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Tamura\\PlayerController.cs",
               "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\Tamura\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Tamura\\PlayerController.cs",
-              "ViewState": "AgIAAP8AAAAAAAAAAAAgwBYBAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAYBAAAAAAAAAAAiwBQBAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-29T07:21:49.934Z",
               "EditorCaption": ""
@@ -72,8 +71,7 @@
               "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\RandomUp.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAwwBMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-29T04:10:19.28Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-29T04:10:19.28Z"
             },
             {
               "$type": "Document",
@@ -89,13 +87,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAAEBAAAAAAAAAAAnwDoBAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAQBAAAAAAAAAAA8wDEBAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-29T00:35:51.096Z",
               "EditorCaption": ""
@@ -110,8 +108,7 @@
               "RelativeToolTip": "Assets\\kiyosawa\\DeviceManager.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAwwB4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T09:22:05.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T09:22:05.742Z"
             }
           ]
         }

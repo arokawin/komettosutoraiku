@@ -162,7 +162,7 @@ public class GameManager : MonoBehaviour
         if (gameEnd) return;
         LifeCounts[playerNum]--;
         // ŸÒ‚Ì”Ô†‚ğ playerNum ‚É“ü‚ê‚é(1 - playerNum ‚Å”sÒ‚Ì”Ô†‚©‚çŸÒ‚Ì”Ô†‚É•ÏX)
-        StarRound(1 - playerNum, 1 - LifeCounts[playerNum]);
+        StarRound( playerNum, LifeCounts[playerNum]);
     }
 
     /// <summary>

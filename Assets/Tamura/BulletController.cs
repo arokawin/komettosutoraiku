@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    [SerializeField,Header("�e�̑��x")]
+    [SerializeField,Header("弾のスピード")]
     private float speed;
 
     private Vector2 direction;

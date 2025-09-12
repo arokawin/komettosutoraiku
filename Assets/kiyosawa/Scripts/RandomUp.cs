@@ -27,6 +27,7 @@ public class RandomUp : MonoBehaviour
             }
         }
     }
+
     /// <summary>
     /// è¦Î‚Ìƒ‰ƒ“ƒ_ƒ€¶¬
     /// </summary>

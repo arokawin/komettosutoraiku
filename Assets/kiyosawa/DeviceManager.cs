@@ -17,20 +17,13 @@ public class    DeviceManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
     public static DeviceManager Instance => instance;
-
     private Gamepad[] _gamepad = new Gamepad[0];
-
     public Dictionary<int, Gamepad> Gamepads;
-
     public string[] JoystickNames = new string[0];
 
-    //private int CurrentConnectionCount = 0;
-
-    // Start is called before the first frame update
     void Start()
     {
         Gamepads = new Dictionary<int, Gamepad>();

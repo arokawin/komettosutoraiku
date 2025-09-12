@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
 using System.Threading.Tasks;
-using UnityEditor;
 using UnityEngine;
 
 public class RandomUp : MonoBehaviour
@@ -10,20 +6,15 @@ public class RandomUp : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject inseki;
 
-    [SerializeField]
-    private Transform rangeA;
-    [SerializeField] 
-    private Transform rangeB;
-
-    
+    [SerializeField] private Transform rangeA;
+    [SerializeField] private Transform rangeB;
 
    public  void Start()
     {
         // 繰り返し処理
         SoundManager.Instance.PlaySe(SEType.SE2);
         //await Task.Delay(5000);
-        InvokeRepeating("Randomkougeki_UpRight", 1f, 2f);
-        
+        InvokeRepeating("Randomkougeki_UpRight", 1f, 2f);        
     }
     private void Update()
     {
@@ -36,12 +27,13 @@ public class RandomUp : MonoBehaviour
             }
         }
     }
-
-   
-
-
+    /// <summary>
+    /// 隕石のランダム生成
+    /// </summary>
+    /// <returns></returns>
     async Task Randomkougeki_UpRight()
     {
+        // カウントダウン開始から５秒後に生成
         if (GameManager.Instance.isCountingDown == true)
         {
             await Task.Delay(5000);
@@ -50,6 +42,7 @@ public class RandomUp : MonoBehaviour
         var UpDown = Random.Range(0, 2);
         switch (UpDown)
         {
+            // 上からランダム生成
             case 0:
                 var meteo = Instantiate(inseki, new Vector2(Random.Range(rangeA.position.x, rangeB.position.x), -10f), Quaternion.Euler(0, 0, 90f), transform);
                 var rb = meteo.GetComponent <Rigidbody2D>();
@@ -60,8 +53,8 @@ public class RandomUp : MonoBehaviour
                 // else meteo.transform.localEulerAngles = new Vector3(0, 0, 180f);
                 meteo.transform.localEulerAngles = new Vector3(0, 0, meteo.transform.localEulerAngles.z + radY);
                 rb.velocity = new Vector3(Xvec, Yvec, 0);
-
                 break; 
+            // 下からランダム生成
             case 1:
                 meteo = Instantiate(inseki, new Vector2(Random.Range(rangeA.position.x, rangeB.position.x), 10f), Quaternion.Euler(0, 0, 90f), transform);
                 rb = meteo.GetComponent<Rigidbody2D>();

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Threading.Tasks;
@@ -12,20 +10,17 @@ public class FadeManager : MonoBehaviour
     //private bool isFadeIn = false;
     private bool isFadeOut = false;
 
-
     Image FadeImage;
-    // Start is called before the first frame update
+
     void Start()
     {
         fadePanel = GetComponent<Image>();
     }
 
-    // Update is called once per frame
-     void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// フェードイン
+    /// </summary>
+    /// <returns></returns>
      public async Task FadeIn()
     {
         if (isFadeOut) return;
@@ -47,6 +42,10 @@ public class FadeManager : MonoBehaviour
         await Task.Delay(1000);
     }
 
+    /// <summary>
+    /// フェードアウト
+    /// </summary>
+    /// <returns></returns>
     public async Task FadeOut()
     {
         if (isFadeOut) return;

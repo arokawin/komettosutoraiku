@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MeteoriteDestroy : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject randomuUp;
+    // ƒJƒƒ‰ŠO‚És‚Á‚½‚Æ‚«íœ
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
@@ -15,5 +15,4 @@ public class MeteoriteDestroy : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
 }

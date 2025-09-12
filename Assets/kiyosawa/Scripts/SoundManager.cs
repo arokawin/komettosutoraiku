@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 
 public enum BGMType
 {
@@ -12,6 +10,9 @@ public enum BGMType
 }
 
 // シリアライズ化
+/// <summary>
+/// BGMの詳細設定
+/// </summary>
 [System.Serializable]
 struct BGMData
 {
@@ -21,6 +22,7 @@ struct BGMData
     public float Volume;
     public bool Loop;
 }
+
 public enum SEType
 {
     SE1,
@@ -31,6 +33,9 @@ public enum SEType
     Null
 }
 
+/// <summary>
+/// SEの詳細設定
+/// </summary>
 [System.Serializable]
 struct SEData
 {
@@ -43,23 +48,14 @@ struct SEData
 
 public class SoundManager : MonoBehaviour
 {
-        // 関数のクラスを Instance化
-
         private static SoundManager instance;
         public static SoundManager Instance { get => instance; }
         //　ゲーム内で再生するBGMのリスト
-        [SerializeField]
-        private List<BGMData> bgmDateList = new List<BGMData>();
+        [SerializeField] private List<BGMData> bgmDateList = new List<BGMData>();
+        [SerializeField] private List<SEData> seDataList = new List<SEData>();
+        [SerializeField] private AudioSource bgmSource = null;
+        [SerializeField] private AudioSource seSource = null;
 
-        [SerializeField]
-        private List<SEData> seDataList = new List<SEData>();
-
-        [SerializeField]
-        private AudioSource bgmSource = null;
-
-        [SerializeField]
-        private AudioSource seSource = null;
-        // Start is called before the first frame update
         void Start()
         {
             if (instance == null)
@@ -67,13 +63,8 @@ public class SoundManager : MonoBehaviour
             else return;
             DontDestroyOnLoad(this.gameObject);
             PlayBgm(BGMType.BGM3);
-    }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
+
         // BGMの再生
         public void PlayBgm(BGMType type)
         {
@@ -84,11 +75,12 @@ public class SoundManager : MonoBehaviour
             bgmSource.loop = bgm.Loop;
             bgmSource.Play();
         }
+        // BGMの停止
         public void StopBgm()
         {
             bgmSource.Stop();
         }
-
+        // SEの再生
         public void PlaySe(SEType type)
         {
             if (type == SEType.Null) return;
@@ -106,6 +98,7 @@ public class SoundManager : MonoBehaviour
             seSource.loop = se.Loop;
             seSource.Play();
         }
+        // ループ再生の停止
         public void StopLoopBgm()
         { 
             seSource.Stop();
@@ -115,5 +108,4 @@ public class SoundManager : MonoBehaviour
         {
             return seSource;
         }
-    
 }

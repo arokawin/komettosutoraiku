@@ -81,7 +81,6 @@ public class PlayerController : MonoBehaviour
     public float HP;
     void Start()
     {
-
         int maxLength = Mathf.Max(hanten.Length, modoru.Length);
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -268,6 +267,10 @@ public class PlayerController : MonoBehaviour
 
     private async void OnTriggerEnter2D(Collider2D collider)
     {
+        if (isHit == true)
+        {
+            return;
+        }
         if (collider.gameObject.CompareTag("inseki")|| collider.gameObject.CompareTag("bullet1")|| collider.gameObject.CompareTag("bullet2"))
         {
             //SoundManager.Instance.PlayBgm(BGMType.BGM2);

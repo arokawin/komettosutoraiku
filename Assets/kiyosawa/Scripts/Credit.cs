@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,16 +9,12 @@ public class Credit : MonoBehaviour
     void Start()
     {
         bool isActive = false;
+        // クレジットの表示
         button.onClick.AddListener(() =>
         {
             SoundManager.Instance.PlaySe(SEType.SE2);
             isActive = !isActive;
             imageGameobject.SetActive(isActive);
         });
-    }
-
-    void Update()
-    {
-        
     }
 }

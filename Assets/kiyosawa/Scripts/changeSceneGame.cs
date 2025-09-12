@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,22 +7,7 @@ public class ChangeSceneGame : MonoBehaviour
 {
     [SerializeField] private FadeManager fadePanel;
 
-    private void Start()
-    {
-        
-    }
-
-    public async void Restart_button()
-    {
-        GetComponent<Button>().interactable = false;
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        SoundManager.Instance.PlaySe(SEType.SE1);
-        // 500É~Éäïbë“Ç¡ÇƒÇ©ÇÁèàóùÇë±ÇØÇÈ
-        await Task.Delay(500);
-        await fadePanel.FadeOut();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-    public async void ChangeTitle_button()
+    public async void ChangeTitle()
     {
         GetComponent<Button>().interactable = false;
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -46,12 +28,6 @@ public class ChangeSceneGame : MonoBehaviour
         SceneManager.LoadScene("GameMain");
     }
 
-    //async void FadeIn()
-    //{
-
-    //}
-
-
     public async void ReloadScene()
     {
         GetComponent<Button>().interactable = false;
@@ -61,9 +37,6 @@ public class ChangeSceneGame : MonoBehaviour
         await Task.Delay(500);
         await fadePanel.FadeOut();
         SceneManager.LoadScene("GameMain");
-    }
-    public void Credit()
-    {
     }
 
     async void OnSceneLoaded(Scene scene, LoadSceneMode mode)

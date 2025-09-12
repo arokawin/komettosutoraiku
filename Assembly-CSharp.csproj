@@ -73,7 +73,7 @@
     <Compile Include="Assets\kiyosawa\DeviceManager.cs" />
     <Compile Include="Assets\Tamura\BulletController.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\GameManager.cs" />
-    <Compile Include="Assets\kiyosawa\Scripts\RandomUp.cs" />
+    <Compile Include="Assets\kiyosawa\Scripts\RandomMeteorite.cs" />
     <Compile Include="Assets\Tamura\FlipWall.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\FadoManager.cs" />
     <Compile Include="Assets\kiyosawa\Scripts\Credit.cs" />

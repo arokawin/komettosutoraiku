@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|c:\\users\\kiyo\\documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\random.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\random.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|c:\\users\\kiyo\\documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -18,11 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Random.cs",
+              "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\Random.cs",
+              "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\Random.cs",
+              "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\Random.cs",
+              "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\Random.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T07:09:57.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SoundManager.cs",
               "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\SoundManager.cs",
               "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\SoundManager.cs",
@@ -30,18 +47,17 @@
               "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\SoundManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T02:55:39.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-12T02:55:39.233Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-12T02:55:36.034Z",
               "EditorCaption": ""

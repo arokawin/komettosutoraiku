@@ -3,44 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|c:\\users\\kiyo\\documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\meteoritedestroy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\meteoritedestroy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\resultuicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\resultuicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\random.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\random.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\fadomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\fadomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\debug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\debug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\credit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\credit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\changescenegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\changescenegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\kiyo\\documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\randomup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\kiyosawa\\scripts\\randomup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|C:\\Users\\kiyo\\Documents\\komettosutoraiku\\assets\\kiyosawa\\scripts\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F8AF92-0442-2ABB-0679-F2E1C08C0880}|Assembly-CSharp.csproj|solutionrelative:assets\\kiyosawa\\scripts\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -60,118 +28,23 @@
               "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\SoundManager.cs",
               "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\SoundManager.cs",
               "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\SoundManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T02:55:39.233Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ResultUiController.cs",
-              "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\ResultUiController.cs",
-              "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\ResultUiController.cs",
-              "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\ResultUiController.cs",
-              "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\ResultUiController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T02:55:38.115Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Random.cs",
-              "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\Random.cs",
-              "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\Random.cs",
-              "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\Random.cs",
-              "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\Random.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T02:55:37.14Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MeteoriteDestroy.cs",
-              "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\MeteoriteDestroy.cs",
-              "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\MeteoriteDestroy.cs",
-              "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\MeteoriteDestroy.cs",
-              "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\MeteoriteDestroy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T02:55:36.646Z",
+              "WhenOpened": "2025-09-12T02:55:39.233Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T02:55:36.034Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FadoManager.cs",
-              "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\FadoManager.cs",
-              "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\FadoManager.cs",
-              "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\FadoManager.cs",
-              "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\FadoManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T02:55:35.349Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Credit.cs",
-              "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\Credit.cs",
-              "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\Credit.cs",
-              "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\Credit.cs",
-              "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\Credit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T02:55:33.03Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Debug.cs",
-              "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\Debug.cs",
-              "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\Debug.cs",
-              "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\Debug.cs",
-              "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\Debug.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T01:08:23.165Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "changeSceneGame.cs",
-              "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\changeSceneGame.cs",
-              "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\changeSceneGame.cs",
-              "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\changeSceneGame.cs",
-              "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\changeSceneGame.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T01:05:12.797Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RandomUp.cs",
-              "DocumentMoniker": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\RandomUp.cs",
-              "RelativeDocumentMoniker": "Assets\\kiyosawa\\Scripts\\RandomUp.cs",
-              "ToolTip": "C:\\Users\\kiyo\\Documents\\komettosutoraiku\\Assets\\kiyosawa\\Scripts\\RandomUp.cs",
-              "RelativeToolTip": "Assets\\kiyosawa\\Scripts\\RandomUp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-29T04:10:19.28Z"
+              "WhenOpened": "2025-09-12T02:55:36.034Z",
+              "EditorCaption": ""
             }
           ]
         }

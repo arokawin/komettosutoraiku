@@ -1776,7 +1776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9106020074913668690, guid: 196764b63d0742e42bd4692d1dbec3a2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3885,7 +3885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 181016191984533321, guid: a5e06e40799e41041805f8d4db1420d5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1829193240636365675, guid: a5e06e40799e41041805f8d4db1420d5, type: 3}
       propertyPath: m_IsActive
@@ -5769,7 +5769,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 21eb00d103d6afe4e93db1653ea3dc10, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8553c23cf08af142afad17b6f4776ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6152,7 +6152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3579729640348391407, guid: 6f56df138efb2294f9a94059ec3f1f53, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3987506362426735398, guid: 6f56df138efb2294f9a94059ec3f1f53, type: 3}
       propertyPath: m_IsTrigger
@@ -6548,7 +6548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7638831463485896278, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7738261391843778679, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6660,7 +6660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3042036079530567357, guid: f9015180ead1bdb4a801310483e9d1e4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3699454697226889845, guid: f9015180ead1bdb4a801310483e9d1e4, type: 3}
       propertyPath: m_Constraints
@@ -7228,7 +7228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8436758703223116429, guid: 8b9c613c970bd0e4f8c954dba05b76cb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

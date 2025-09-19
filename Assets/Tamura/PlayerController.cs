@@ -108,7 +108,6 @@ public class PlayerController : MonoBehaviour
         input?.Disable();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (gameManager.GetComponent<GameManager>().GameEnd == true)
@@ -116,13 +115,11 @@ public class PlayerController : MonoBehaviour
             aimSpInstance.SetActive(false);
             rb2d.velocity = Vector2.zero;
             anim.SetBool("Move", false);
-            //anim.SetBool("damage", false);
+
             return;
         }
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, GroundLayer);
-
-        // transform.position += new Vector3(move.x, 0f, 0f) * xSpeed * Time.deltaTime;
 
         
         anim.SetBool("Move", move.x != 0);
@@ -172,8 +169,6 @@ public class PlayerController : MonoBehaviour
         ctTime = FirstCtTime;
         ammo = 0;
         isFlipped = FirstFlipped;
-        //Vector2 velocity = rb2d.velocity;
-        //velocity.x = 0f;
         move.x = 0;
         isHit = false;
         anim.SetBool("damage", false);
@@ -273,7 +268,6 @@ public class PlayerController : MonoBehaviour
         }
         if (collider.gameObject.CompareTag("inseki")|| collider.gameObject.CompareTag("bullet1")|| collider.gameObject.CompareTag("bullet2"))
         {
-            //SoundManager.Instance.PlayBgm(BGMType.BGM2);
             anim.SetBool("Move", false);
             anim.SetBool("damage",true);
             StartCoroutine(_hit());

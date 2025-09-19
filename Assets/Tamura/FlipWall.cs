@@ -10,13 +10,10 @@ public class FlipWall : MonoBehaviour
     private bool flipCheck;
     [SerializeField]
     private Vector3 _offset;
-    // Start is called before the first frame update
     void Start()
     {
         time = 0f;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (!flipCheck)
@@ -44,9 +41,7 @@ public class FlipWall : MonoBehaviour
 
     private void Flip(Transform transform, Rigidbody2D rb2d, PlayerController PlayerCTL, SpriteRenderer sprite)
     {
-        //sprite.flipX = sprite.flipX;
-        //sprite.flipY = !sprite.flipY;
-
+  
         Vector3 localScale = transform.localScale;
         localScale.x = -localScale.x;
         localScale.y = -localScale.y;

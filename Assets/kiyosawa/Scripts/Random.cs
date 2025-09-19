@@ -29,7 +29,7 @@ public class RandomMeteo : MonoBehaviour
                 var radY = Mathf.Acos(Xvec / Mathf.Sqrt(Mathf.Pow(Xvec, 2) + Mathf.Pow(Yvec, 2))) * Mathf.Rad2Deg;
                 // if (meteo.transform.position.x >= 0.01f) meteo.transform.localEulerAngles = new Vector3(0, 0, -90f);
                 // else meteo.transform.localEulerAngles = new Vector3(0, 0, 180f);
-                meteo.transform.localEulerAngles = new Vector3(0, 0, meteo.transform.localEulerAngles.z + radY);
+                //meteo.transform.localEulerAngles = new Vector3(0, 0, meteo.transform.localEulerAngles.z + radY);
                 rb.velocity = new Vector3(Xvec, Yvec, 0);
 
                 break; 

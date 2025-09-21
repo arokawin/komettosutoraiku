@@ -7,7 +7,6 @@ public class FadeManager : MonoBehaviour
     [SerializeField] private Image fadePanel;
     [SerializeField] private float fadeSpeed = 1.0f;
 
-    //private bool isFadeIn = false;
     private bool isFadeOut = false;
 
     Image FadeImage;

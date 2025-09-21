@@ -34,7 +34,7 @@ public class RandomMeteo : MonoBehaviour
 
                 break; 
             case 1:
-                //meteo = Instantiate(inseki, new Vector2(Random.Range(rangeA.position.x, rangeB.position.x), 10f), Quaternion.Euler(0, 0, 90f));
+                //meteo = Instantiate(titleMeteorile, new Vector2(Random.Range(rangeA.position.x, rangeB.position.x), 10f), Quaternion.Euler(0, 0, 90f));
                 //rb = meteo.GetComponent<Rigidbody2D>();
                 //Xvec = Random.Range(-10f, 10f);
                 //Yvec = Random.Range(-1f, -10f);

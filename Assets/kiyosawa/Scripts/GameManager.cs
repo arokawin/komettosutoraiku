@@ -48,17 +48,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ChangeSceneGame sceneGame;
     [SerializeField] private List<Sprite> Wins = new List<Sprite>();
 
+    private static GameManager instance;
+    public FadeManager fadeManager;
+
     private int RoundCount = 0;
     private int[] LifeCounts = { 2, 2 };
 
-    public bool GameEnd => gameEnd;
     private bool gameEnd = false;
+    public bool GameEnd => gameEnd;
     public bool isCountingDown = false;
    
     private float currentCountDown;
 
-    private static GameManager instance;
-    public FadeManager fadeManager;
 
     // インスタンス化
     public static GameManager Instance
@@ -289,11 +290,13 @@ public class GameManager : MonoBehaviour
         //WinP2.SetActive(false);
 
         // ()の中で一つでも条件を満たせていたら true
+        // どちらかのライフが０になったら true
         // Winner表示
         if (LifeCounts.Any(life => life == 0))
         {
             SoundManager.Instance.StopBgm();
             SoundManager.Instance.PlayBgm(BGMType.BGM2);
+            // 各プレイヤーのリセット処理
             for (int i = 0; PlayerControllers.Count > i; i++)
             {
                 PlayerControllers[i].ResetPlayer();
@@ -335,7 +338,6 @@ public class GameManager : MonoBehaviour
             Round[RoundCount].SetActive(true);
 
             await fadeManager.FadeIn();
-            //sceneGame.FadeOut();
 
             gameEnd = false;
             isCountingDown = true;

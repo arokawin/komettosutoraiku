@@ -266,7 +266,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        if (collider.gameObject.CompareTag("inseki")|| collider.gameObject.CompareTag("bullet1")|| collider.gameObject.CompareTag("bullet2"))
+        if (collider.gameObject.CompareTag("titleMeteorile")|| collider.gameObject.CompareTag("bullet1")|| collider.gameObject.CompareTag("bullet2"))
         {
             anim.SetBool("Move", false);
             anim.SetBool("damage",true);

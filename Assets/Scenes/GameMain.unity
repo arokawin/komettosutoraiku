@@ -853,11 +853,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3667630151402037572, guid: 9a9ea132c6724f2409c23e93a4b83686, type: 3}
   m_PrefabInstance: {fileID: 753524469}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &262858650 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8994502573536544182, guid: a158a4669db5ad1459344df65ab640c0, type: 3}
-  m_PrefabInstance: {fileID: 7270903145520985069}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &274013935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,8 +1861,8 @@ MonoBehaviour:
   Wins:
   - {fileID: 21300000, guid: 3cd6535992b94874a94aaec53a1ba31f, type: 3}
   - {fileID: 21300000, guid: 305af0eb88b918b42a02f0741bcd4e16, type: 3}
-  isCountingDown: 0
   fadeManager: {fileID: 1389649978}
+  isCountingDown: 0
 --- !u!4 &559870235
 Transform:
   m_ObjectHideFlags: 0
@@ -4248,7 +4243,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1389649974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efecc92a460d3d9449b1e6e1f6be3f8a, type: 3}
+  m_Script: {fileID: 11500000, guid: d434165ce2a1d4f43ae654edb7284be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadePanel: {fileID: 1389649976}
@@ -4900,7 +4895,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff8bffc6ec92534bb9f1731f87c2347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomuUp: {fileID: 262858650}
 --- !u!1 &1677507684 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2174453114793339875, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
@@ -6518,6 +6512,18 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: 7a74797f02ba8f142863571752649680, type: 3}
+    - target: {fileID: 7149345689586648494, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
+      propertyPath: buttons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7149345689586648494, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
+      propertyPath: buttons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1795790900312247046}
+    - target: {fileID: 7149345689586648494, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
+      propertyPath: buttons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1795790900312247045}
     - target: {fileID: 7180326594008956228, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
       propertyPath: m_SizeDelta.x
       value: 600
@@ -6642,6 +6648,28 @@ PrefabInstance:
       addedObject: {fileID: 1956687773}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
+--- !u!114 &1795790900312247045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1442703399652526880, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
+  m_PrefabInstance: {fileID: 1795790900312247044}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1795790900312247046 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4257394186737164932, guid: c922966d8e9c8fb4bb983535995bca7f, type: 3}
+  m_PrefabInstance: {fileID: 1795790900312247044}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5709394840540871705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6959,6 +6987,10 @@ PrefabInstance:
       propertyPath: rangeB
       value: 
       objectReference: {fileID: 1802836380}
+    - target: {fileID: 9170599146880270086, guid: a158a4669db5ad1459344df65ab640c0, type: 3}
+      propertyPath: meteorile
+      value: 
+      objectReference: {fileID: 1473179929343905733, guid: 0fc3701690746b843bb4ef42759bd0ce, type: 3}
     - target: {fileID: 9170599146880270086, guid: a158a4669db5ad1459344df65ab640c0, type: 3}
       propertyPath: gameManager
       value: 

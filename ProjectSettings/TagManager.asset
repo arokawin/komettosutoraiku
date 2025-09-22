@@ -11,6 +11,7 @@ TagManager:
   - bullet1
   - bullet2
   - Star
+  - Meteorile
   layers:
   - Default
   - TransparentFX

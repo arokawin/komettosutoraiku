@@ -151,8 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632acedb133aa2640801fb5645b3b3da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _endPos: {x: -20, y: -10}
-  inseki: {fileID: 1473179929343905733, guid: 1abf8b7312077da48971938a6735c226, type: 3}
+  titleMeteorile: {fileID: 1473179929343905733, guid: 1abf8b7312077da48971938a6735c226, type: 3}
   rangeA: {fileID: 1437794415}
   rangeB: {fileID: 2088503924}
 --- !u!4 &230465715
@@ -399,7 +398,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 317096848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efecc92a460d3d9449b1e6e1f6be3f8a, type: 3}
+  m_Script: {fileID: 11500000, guid: d434165ce2a1d4f43ae654edb7284be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadePanel: {fileID: 317096849}
@@ -1055,7 +1054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e8a5f9718dda04f8f1508dda05d66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttons:
+  buttons:
   - {fileID: 1743757613}
   - {fileID: 1064478692}
 --- !u!114 &1541614965
